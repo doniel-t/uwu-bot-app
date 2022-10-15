@@ -44,7 +44,11 @@ export default function UwUfy() {
               <span className="label-text">UwUfies a phrase</span>
             </label>
             <div className="divider"></div>
-            <form action="#" onSubmit={() => submitUwUfyRequest()}>
+            <form
+              onSubmit={(e: FormEvent<HTMLElement>) => {
+                e.preventDefault();
+                submitUwUfyRequest();
+              }}>
               <StringInputField
                 onInput={onInput}
                 isInputValid={isInputValid}

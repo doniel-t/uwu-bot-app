@@ -44,7 +44,11 @@ export default function Ask() {
               <span className="label-text">Ask me a Question!</span>
             </label>
             <div className="divider"></div>
-            <form action="#" onSubmit={() => submitAskRequest()}>
+            <form
+              onSubmit={(e: FormEvent<HTMLElement>) => {
+                e.preventDefault();
+                submitAskRequest();
+              }}>
               <StringInputField
                 isInputValid={isInputValid}
                 onInput={onInput}

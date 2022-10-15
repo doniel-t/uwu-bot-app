@@ -12,7 +12,7 @@ export default function Ask() {
     return askInput != undefined && askInput != '';
   }
 
-  async function handleClick() {
+  async function submitAskRequest() {
     const params: AskParams = {
       input: askInput as string,
     };
@@ -24,12 +24,13 @@ export default function Ask() {
 
     const response = await fetch('/api/ask?' + new URLSearchParams(params));
     const data = await response.json();
-    navigator.clipboard.writeText(data.content);
+    if (navigator) navigator.clipboard.writeText(data.content);
     setAskResponse(data);
     notifySucces(`🥱 ${data.content}`);
   }
 
   function onInput(e: FormEvent<HTMLInputElement>) {
+    e.preventDefault();
     setAskInput((e.target as HTMLInputElement).value);
   }
 
@@ -43,18 +44,19 @@ export default function Ask() {
               <span className="label-text">Ask me a Question!</span>
             </label>
             <div className="divider"></div>
-            <StringInputField
-              isInputValid={isInputValid}
-              onInput={onInput}
-              title="Ask!"
-              placeholder="Ask me anything!"
-            />
+            <form action="#" onSubmit={() => submitAskRequest()}>
+              <StringInputField
+                isInputValid={isInputValid}
+                onInput={onInput}
+                title="Ask!"
+                placeholder="Ask me anything!"
+              />
+            </form>
           </div>
-
           <button
             className="btn btn-primary tooltip tooltip-primary"
             data-tip="Ask me for permission Daddy!"
-            onClick={() => handleClick()}>
+            onClick={() => submitAskRequest()}>
             LESS GOO!
           </button>
         </div>

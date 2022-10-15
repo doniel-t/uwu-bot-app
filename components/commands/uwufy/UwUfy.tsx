@@ -17,7 +17,7 @@ export default function UwUfy() {
     setUwufyInput((e.target as HTMLInputElement).value);
   }
 
-  async function handleClick() {
+  async function submitUwUfyRequest() {
     const params: UwUfyParams = {
       input: uwufyInput as string,
     };
@@ -29,7 +29,7 @@ export default function UwUfy() {
 
     const response = await fetch('/api/uwufy?' + new URLSearchParams(params));
     const data = await response.json();
-    navigator.clipboard.writeText(data.content);
+    if (navigator) navigator.clipboard.writeText(data.content);
     setUwufied(data);
     notifySucces('Copied to Clipboard!');
   }
@@ -44,18 +44,20 @@ export default function UwUfy() {
               <span className="label-text">UwUfies a phrase</span>
             </label>
             <div className="divider"></div>
-            <StringInputField
-              onInput={onInput}
-              isInputValid={isInputValid}
-              title="UwUfy!"
-              placeholder="UwUfy me!"
-            />
+            <form action="#" onSubmit={() => submitUwUfyRequest()}>
+              <StringInputField
+                onInput={onInput}
+                isInputValid={isInputValid}
+                title="UwUfy!"
+                placeholder="UwUfy me!"
+              />
+            </form>
           </div>
 
           <button
             className="btn btn-primary tooltip tooltip-primary "
             data-tip="UwU me Daddy!"
-            onClick={() => handleClick()}>
+            onClick={() => submitUwUfyRequest()}>
             LESS GOO!
           </button>
 

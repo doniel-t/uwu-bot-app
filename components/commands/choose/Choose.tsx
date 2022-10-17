@@ -7,44 +7,47 @@ import {
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 import { notifyError, notifySucces } from '../../reusable/cmdParamField/utils';
 
-export default function Ask() {
-  const [askResponse, setAskResponse] = useState<StringResponse>();
-  const [askInput, setAskInput] = useState<string>();
+export default function Choose() {
+  const [chooseResponse, setChooseResponse] = useState<StringResponse>();
+  const [chooseInput, setChooseInput] = useState<string>();
 
   function isInputValid(): boolean {
-    return askInput != undefined && askInput != '';
+    return chooseInput != undefined && chooseInput != '' && chooseInput.includes(',');
   }
 
   async function submitAskRequest() {
     const params: StringCommandParams = {
-      input: askInput as string,
+      input: chooseInput as string,
     };
 
     if (!isInputValid()) {
-      notifyError('Ask!');
+      notifyError('Choose!');
       return;
     }
 
-    const response = await fetch('/api/ask?' + new URLSearchParams(params));
+    const response = await fetch('/api/choose?' + new URLSearchParams(params));
     const data = await response.json();
     if (navigator) navigator.clipboard.writeText(data.content);
-    setAskResponse(data);
+    setChooseResponse(data);
     notifySucces(`🥱 ${data.content}`);
   }
 
   function onInput(e: FormEvent<HTMLInputElement>) {
     e.preventDefault();
-    setAskInput((e.target as HTMLInputElement).value);
+    setChooseInput((e.target as HTMLInputElement).value);
   }
 
   return (
     <>
       <div className="card w-96 bg-[#1d1e2b] shadow-xl mx-12 mt-20 mb-8">
         <div className="card-body">
-          <h2 className="card-title text-xl text-primary">Ask!</h2>
+          <h2 className="card-title text-xl text-primary">Choose!</h2>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Ask me a Question!</span>
+              <span className="label-text">Let me choose for you!</span>
+            </label>
+            <label className="label">
+              <span className="label-text">Separate your input by ","</span>
             </label>
             <div className="divider"></div>
             <form
@@ -55,8 +58,8 @@ export default function Ask() {
               <StringInputField
                 isInputValid={isInputValid}
                 onInput={onInput}
-                title="Ask!"
-                placeholder="Ask me anything!"
+                title="Choose!"
+                placeholder="Choices"
               />
             </form>
           </div>

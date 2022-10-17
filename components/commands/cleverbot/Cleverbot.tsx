@@ -7,63 +7,63 @@ import {
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 import { notifyError, notifySucces } from '../../reusable/cmdParamField/utils';
 
-export default function Ask() {
-  const [askResponse, setAskResponse] = useState<StringResponse>();
-  const [askInput, setAskInput] = useState<string>();
+export default function Cleverbot() {
+  const [cleverbotAnswer, setCleverbotAnswer] = useState<StringResponse>();
+  const [cleverbotInput, setCleverbotInput] = useState<string>();
 
   function isInputValid(): boolean {
-    return askInput != undefined && askInput != '';
+    return cleverbotInput != undefined && cleverbotInput != '';
   }
 
-  async function submitAskRequest() {
+  function onInput(e: FormEvent<HTMLElement>) {
+    setCleverbotInput((e.target as HTMLInputElement).value);
+  }
+
+  async function submitUwUfyRequest() {
     const params: StringCommandParams = {
-      input: askInput as string,
+      input: cleverbotInput as string,
     };
 
     if (!isInputValid()) {
-      notifyError('Ask!');
+      notifyError('Chat');
       return;
     }
 
-    const response = await fetch('/api/ask?' + new URLSearchParams(params));
+    const response = await fetch('/api/cleverbot?' + new URLSearchParams(params));
     const data = await response.json();
-    if (navigator) navigator.clipboard.writeText(data.content);
-    setAskResponse(data);
-    notifySucces(`🥱 ${data.content}`);
-  }
-
-  function onInput(e: FormEvent<HTMLInputElement>) {
-    e.preventDefault();
-    setAskInput((e.target as HTMLInputElement).value);
+    console.log(data);
+    setCleverbotAnswer(data.content);
+    notifySucces(data.content);
   }
 
   return (
     <>
       <div className="card w-96 bg-[#1d1e2b] shadow-xl mx-12 mt-20 mb-8">
         <div className="card-body">
-          <h2 className="card-title text-xl text-primary">Ask!</h2>
+          <h2 className="card-title text-xl text-primary">Chat!</h2>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Ask me a Question!</span>
+              <span className="label-text">Chats with you</span>
             </label>
             <div className="divider"></div>
             <form
               onSubmit={(e: FormEvent<HTMLElement>) => {
                 e.preventDefault();
-                submitAskRequest();
+                submitUwUfyRequest();
               }}>
               <StringInputField
-                isInputValid={isInputValid}
                 onInput={onInput}
-                title="Ask!"
-                placeholder="Ask me anything!"
+                isInputValid={isInputValid}
+                title="Chat!"
+                placeholder="No bitches?"
               />
             </form>
           </div>
+
           <button
-            className="btn btn-primary tooltip tooltip-primary"
-            data-tip="Ask me for permission Daddy!"
-            onClick={() => submitAskRequest()}>
+            className="btn btn-primary tooltip tooltip-primary "
+            data-tip="Click me already!"
+            onClick={() => submitUwUfyRequest()}>
             LESS GOO!
           </button>
         </div>

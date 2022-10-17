@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { ErrorResponse, UwUfyResponse } from "./uwufy/types";
-import { uwufy } from "./uwufy/uwufy";
+import { StringInputErrorResponse, StringResponse } from "../../types/stringCommands/stringCommandTypes";
+import uwufy from "../../utils/api/uwufy/uwufy";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<UwUfyResponse | ErrorResponse>
+  res: NextApiResponse<StringResponse | StringInputErrorResponse>
 ) {
   const inputPhrase = req.query.input;
   if (!inputPhrase) {

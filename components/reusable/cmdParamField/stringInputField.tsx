@@ -21,7 +21,7 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
       <input
         type="text"
         placeholder={placeholder}
-        className="input input-bordered w-1/2"
+        className="input input-bordered w-full resize"
         onInput={onInput}
       />
       <CheckMark isInputValid={isInputValid} />

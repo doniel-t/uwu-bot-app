@@ -1,12 +1,14 @@
 import React, { FormEvent } from 'react';
 import { useState } from 'react';
-import { UwUfyParams, UwUfyResponse } from '../../../pages/api/uwufy/types';
-import { toast } from 'react-toastify';
+import {
+  StringCommandParams,
+  StringResponse,
+} from '../../../types/stringCommands/stringCommandTypes';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 import { notifyError, notifySucces } from '../../reusable/cmdParamField/utils';
 
 export default function UwUfy() {
-  const [uwufied, setUwufied] = useState<UwUfyResponse>();
+  const [uwufied, setUwufied] = useState<StringResponse>();
   const [uwufyInput, setUwufyInput] = useState<string>();
 
   function isInputValid(): boolean {
@@ -18,7 +20,7 @@ export default function UwUfy() {
   }
 
   async function submitUwUfyRequest() {
-    const params: UwUfyParams = {
+    const params: StringCommandParams = {
       input: uwufyInput as string,
     };
 
@@ -36,7 +38,7 @@ export default function UwUfy() {
 
   return (
     <>
-      <div className="card w-96 bg-[#1d1e2b] shadow-xl mx-12 mb-8">
+      <div className="card w-96 bg-[#1d1e2b] shadow-xl mx-12 mt-20 mb-8">
         <div className="card-body">
           <h2 className="card-title text-xl text-primary">UwUfy!</h2>
           <div className="form-control">
@@ -64,9 +66,6 @@ export default function UwUfy() {
             onClick={() => submitUwUfyRequest()}>
             LESS GOO!
           </button>
-
-          <div className="card-actions"></div>
-          <div className="font-sans font-semibold">UwUfied: {uwufied?.content}</div>
         </div>
       </div>
     </>

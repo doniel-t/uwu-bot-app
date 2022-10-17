@@ -5,17 +5,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Ask from '../components/commands/ask/Ask';
+import Choose from '../components/commands/choose/Choose';
+import CommandContainer from '../components/CommandContainer';
 
 const Home: NextPage = () => {
   return (
     <>
+      <Hero />
       <Navbar />
-      <div className="flex flex-wrap justify-evenly mt-24">
-        {/* <Hero /> */}
-        <UwUfy />
-        <Ask />
-        <ToastContainer />
-      </div>
+      <CommandContainer />
+      <ToastContainer />
     </>
   );
 };

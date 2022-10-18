@@ -1,5 +1,5 @@
 import { StringCommandParams } from "../../../types/stringCommands/stringCommandTypes";
-import { notifyError, notifySucces } from "../../reusable/cmdParamField/utils";
+import { notifyError, notifySucces } from "../../../utils/libs/notify";
 
 export function isInputValid(cleverbotInput: string): boolean {
     return cleverbotInput != undefined && cleverbotInput != '';

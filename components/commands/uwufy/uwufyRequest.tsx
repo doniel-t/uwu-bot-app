@@ -1,5 +1,5 @@
 import { StringCommandParams } from '../../../types/stringCommands/stringCommandTypes';
-import { notifyError, notifySucces } from '../../reusable/cmdParamField/utils';
+import { notifyError, notifySucces } from '../../../utils/libs/notify';
 
 export function isInputValid(uwufyInput: string): boolean {
   return uwufyInput != undefined && uwufyInput != '';

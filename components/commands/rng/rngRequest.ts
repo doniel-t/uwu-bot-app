@@ -1,6 +1,6 @@
 import { RngCommandParams } from "../../../types/numberCommands/numberCommandTypes";
 import { isNumeric } from "../../../utils/api/rng/rng";
-import { notifyError, notifyErrorResponse, notifySucces } from "../../reusable/cmdParamField/utils";
+import { notifyError, notifyErrorResponse, notifySucces } from "../../../utils/libs/notify";
 
 export function isInputValid(bound: string): boolean {
     const isFieldNotEmpty = bound != undefined && bound != '';

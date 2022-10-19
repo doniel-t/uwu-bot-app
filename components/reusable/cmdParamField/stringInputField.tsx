@@ -1,10 +1,11 @@
 import { NextPage } from 'next/types';
 import { FormEvent, useState } from 'react';
+import { isInputValid } from '../../../utils/api/submitStringRequest';
 import CheckMark from '../checkMark/checkMark';
 
 type StringInputFieldProps = {
   stringInput: string;
-  isInputValid: (stringInput: string) => boolean;
+  customIsInputValid?: (stringInput: string) => boolean;
   onInput: (e: FormEvent<HTMLInputElement>) => any;
   title: string;
   placeholder: string;
@@ -12,11 +13,15 @@ type StringInputFieldProps = {
 
 const StringInputField: NextPage<StringInputFieldProps> = ({
   stringInput,
-  isInputValid,
   onInput,
+  customIsInputValid,
   title,
   placeholder,
 }) => {
+  const isValid = customIsInputValid
+    ? customIsInputValid(stringInput)
+    : isInputValid(stringInput);
+
   return (
     <label className="input-group my-2">
       <span>{title}</span>
@@ -25,8 +30,9 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
         placeholder={placeholder}
         className="input input-bordered w-full resize"
         onInput={onInput}
+        value={stringInput}
       />
-      <CheckMark isInputValid={isInputValid} stringInput={stringInput} />
+      <CheckMark isInputValid={isValid} stringInput={stringInput} />
     </label>
   );
 };

@@ -1,28 +1,37 @@
 import { NextPage } from 'next';
 import { useState, FormEvent } from 'react';
-import { StringResponse } from '../../../types/stringCommands/stringCommandTypes';
+import {
+  StringInputState,
+  StringResponse,
+} from '../../../types/stringCommands/stringCommandTypes';
+import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
-import { submitChooseRequest } from '../choose/chooseRequest';
-import { submitCleverbotRequest, isInputValid } from './cleverbotRequest';
 
-export const CleverbotFormComponent: NextPage = () => {
+export const ChatFormComponent: NextPage = () => {
   const [cleverbotAnswer, setCleverbotAnswer] = useState<StringResponse>();
   const [cleverbotInput, setCleverbotInput] = useState<string>();
+
+  const state: StringInputState = {
+    input: cleverbotInput!,
+    setInput: setCleverbotInput,
+    output: cleverbotAnswer!,
+    setOutput: setCleverbotAnswer,
+  };
 
   function onInput(e: FormEvent<HTMLElement>) {
     setCleverbotInput((e.target as HTMLInputElement).value);
   }
+
   return (
     <>
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
-          submitCleverbotRequest(cleverbotInput!, setCleverbotAnswer);
+          submitStringRequest('chat', state, false);
         }}>
         <StringInputField
           stringInput={cleverbotInput!}
           onInput={onInput}
-          isInputValid={isInputValid}
           title="Chat!"
           placeholder="No bitches?"
         />
@@ -30,7 +39,7 @@ export const CleverbotFormComponent: NextPage = () => {
       <button
         className="btn btn-primary tooltip tooltip-primary"
         data-tip="Are you this lonely?"
-        onClick={async () => submitChooseRequest(cleverbotInput!, setCleverbotAnswer)}>
+        onClick={async () => submitStringRequest('chat', state, false)}>
         LESS GOO!
       </button>
     </>

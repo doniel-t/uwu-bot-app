@@ -1,12 +1,12 @@
 import React from 'react';
 import Card from '../../reusable/cards/Card';
-import { CleverbotFormComponent } from './CleverBotFormComponent';
+import { ChatFormComponent } from './ChatFormComponent';
 
-export default function Cleverbot() {
+export default function Chat() {
   return (
     <>
       <Card
-        FormComponent={CleverbotFormComponent}
+        FormComponent={ChatFormComponent}
         title="Chat!"
         description="Lets Chat with each other!"
       />

@@ -38,3 +38,16 @@ export function notifyErrorResponse() {
         theme: 'dark',
     });
 }
+
+export function notifyCopyToClipboard() {
+    toast.success(`Copied to Clipboard`, {
+        position: 'bottom-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+    });
+} 

@@ -22,10 +22,10 @@ export default function Navbar() {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a>Homepage</a>
+              <a href="#home">Home</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a href="#textCommandContainer">Text based Commands</a>
             </li>
             <li>
               <a>About</a>
@@ -34,7 +34,9 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost normal-case text-xl">UwU-Bot</a>
+        <a href="#home" className="btn btn-ghost normal-case text-xl">
+          UwU-Bot
+        </a>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">

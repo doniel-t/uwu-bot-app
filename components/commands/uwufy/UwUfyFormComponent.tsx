@@ -1,12 +1,22 @@
 import { NextPage } from 'next';
 import { useState, FormEvent } from 'react';
-import { StringResponse } from '../../../types/stringCommands/stringCommandTypes';
+import {
+  StringInputState,
+  StringResponse,
+} from '../../../types/stringCommands/stringCommandTypes';
+import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
-import { submitUwUfyRequest, isInputValid } from './uwufyRequest';
 
 export const UwUfyFormComponent: NextPage = () => {
   const [uwufied, setUwufied] = useState<StringResponse>();
   const [uwufyInput, setUwufyInput] = useState<string>();
+
+  const state: StringInputState = {
+    input: uwufyInput!,
+    setInput: setUwufyInput,
+    output: uwufied!,
+    setOutput: setUwufied,
+  };
 
   function onInput(e: FormEvent<HTMLElement>) {
     setUwufyInput((e.target as HTMLInputElement).value);
@@ -16,12 +26,11 @@ export const UwUfyFormComponent: NextPage = () => {
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
-          submitUwUfyRequest(uwufyInput!, setUwufied);
+          submitStringRequest('uwufy', state, true);
         }}>
         <StringInputField
           stringInput={uwufyInput!}
           onInput={onInput}
-          isInputValid={isInputValid}
           title="UwUfy!"
           placeholder="UwUfy me!"
         />
@@ -29,7 +38,7 @@ export const UwUfyFormComponent: NextPage = () => {
       <button
         className="btn btn-primary tooltip tooltip-primary"
         data-tip="UwUfy me Daddy!!"
-        onClick={async () => submitUwUfyRequest(uwufyInput!, setUwufied)}>
+        onClick={async () => submitStringRequest('uwufy', state, true)}>
         LESS GOO!
       </button>
     </>

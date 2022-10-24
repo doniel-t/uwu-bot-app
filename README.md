@@ -1,27 +1,28 @@
-# Next.js + Tailwind CSS Example
+# UwU Bot Web-App
+based on [UwU Bot for Discord](https://github.com/doniel-t/uwu-botv2)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Dashboard esq frontend for uwubots(and more) commands built only for the memes
 
-## Deploy your own
+# [Live Demo](https://uwu-bot-app.vercel.app/)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+# Self hosting guide
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## requirements:
+- node 16+
 
-## How to use
+1. clone repo `git clone https://github.com/doniel-t/uwu-botv2.git`
+2. install requirements `npm install`
+3. `npm run build`
+4. get static files from build directory
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## developing:
+1. clone repo `git clone https://github.com/doniel-t/uwu-botv2.git`
+2. install requirements `npm install`
+3. `npm run dev` -> runs on localhost:3000
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+# ToDo:
+- [ ] Add more Text Based Commands(random subreddit post, movie suggestions, food recipe suggestion?)
+- [ ] Add image based commands (Meme Editor, background Remover)
+- [ ] Add utils (pdfUtils, video to audio converter, etc..)
+- [ ] PWA
+- [ ] Dockerize

@@ -5,7 +5,11 @@ import { AskFormComponent } from './AskFormComponent';
 export default function Ask() {
   return (
     <>
-      <Card FormComponent={AskFormComponent} title="Ask!" description="Ask me a Question!" />
+      <Card
+        FormComponent={AskFormComponent}
+        title="Ask!"
+        description="Ask me a Question!"
+      />
     </>
   );
 }

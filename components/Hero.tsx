@@ -6,12 +6,17 @@ export default function Hero() {
     <>
       <div id="home" className="hero min-h-screen mt-16">
         <div className="hero-content flex-col lg:flex-col">
-          <img src="./gigachad.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+          <img
+            src="./gigachad.jpg"
+            className="max-w-sm rounded-lg shadow-2xl"
+          />
           <div>
             <h1 className="text-5xl text-center font-bold">UwU Bot!</h1>
             <p className="py-6 text-center">These commands truly are useless</p>
             <div className="flex justify-center mb-24 relative">
-              <a href="#textCommandContainer" className="btn drop-shadow-md btn-primary">
+              <a
+                href="#textCommandContainer"
+                className="btn drop-shadow-md btn-primary">
                 Get Started
               </a>
             </div>

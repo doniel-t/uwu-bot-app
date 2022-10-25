@@ -7,7 +7,9 @@ import UwUfy from './commands/uwufy/UwUfy';
 
 export default function TextCommandContainer() {
   return (
-    <div id="textCommandContainer" className="flex flex-wrap justify-evenly ">
+    <div
+      id="textCommandContainer"
+      className="flex flex-wrap justify-evenly items-start">
       <UwUfy />
       <Ask />
       <Choose />

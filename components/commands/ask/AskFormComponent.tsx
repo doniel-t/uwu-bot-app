@@ -5,6 +5,7 @@ import {
   StringResponse,
 } from '../../../types/stringCommands/stringCommandTypes';
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
+import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 
 export const AskFormComponent: NextPage = () => {
@@ -25,6 +26,10 @@ export const AskFormComponent: NextPage = () => {
 
   return (
     <>
+      <ParamDescription
+        paramName="Ask"
+        description="Question you want to ask"
+      />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
@@ -34,7 +39,6 @@ export const AskFormComponent: NextPage = () => {
           stringInput={askInput!}
           onInput={onInput}
           title="Ask!"
-          placeholder="Ask me anything!"
         />
       </form>
       <button

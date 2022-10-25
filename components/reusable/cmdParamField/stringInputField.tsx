@@ -1,5 +1,5 @@
 import { NextPage } from 'next/types';
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
 import { isInputValid } from '../../../utils/api/submitStringRequest';
 import CheckMark from '../checkMark/checkMark';
 
@@ -8,7 +8,6 @@ type StringInputFieldProps = {
   customIsInputValid?: (stringInput: string) => boolean;
   onInput: (e: FormEvent<HTMLInputElement>) => any;
   title: string;
-  placeholder: string;
 };
 
 const StringInputField: NextPage<StringInputFieldProps> = ({
@@ -16,7 +15,6 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
   onInput,
   customIsInputValid,
   title,
-  placeholder,
 }) => {
   const isValid = customIsInputValid
     ? customIsInputValid(stringInput)
@@ -27,7 +25,6 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
       <span>{title}</span>
       <input
         type="text"
-        placeholder={placeholder}
         className="input input-bordered w-full resize"
         onInput={onInput}
         value={stringInput}

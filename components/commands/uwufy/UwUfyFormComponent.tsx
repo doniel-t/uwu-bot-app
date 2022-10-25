@@ -5,6 +5,7 @@ import {
   StringResponse,
 } from '../../../types/stringCommands/stringCommandTypes';
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
+import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 
 export const UwUfyFormComponent: NextPage = () => {
@@ -23,6 +24,7 @@ export const UwUfyFormComponent: NextPage = () => {
   }
   return (
     <>
+      <ParamDescription paramName="UwUfy!" description="Sentence to UwUfy" />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
@@ -32,7 +34,6 @@ export const UwUfyFormComponent: NextPage = () => {
           stringInput={uwufyInput!}
           onInput={onInput}
           title="UwUfy!"
-          placeholder="UwUfy me!"
         />
       </form>
       <button

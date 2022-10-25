@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import { useState, FormEvent, Dispatch, SetStateAction } from 'react';
 import { StringResponse } from '../../../types/stringCommands/stringCommandTypes';
+import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 import { submitRngRequest, isInputValid } from './rngRequest';
 
@@ -18,6 +19,10 @@ export const RngFormComponent: NextPage = () => {
   }
   return (
     <>
+      <div className="my-2">
+        <ParamDescription paramName="LowerBound" description="smaller Number" />
+      </div>
+      <ParamDescription paramName="UpperBound" description="smaller Number" />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
@@ -30,14 +35,12 @@ export const RngFormComponent: NextPage = () => {
           customIsInputValid={() => isInputValid(lowerboundInput!)}
           onInput={(e) => onInput(e, setLowerboundInput)}
           title="LowerBound!"
-          placeholder="Low!"
         />
         <StringInputField
           stringInput={upperboundInput!}
           customIsInputValid={() => isInputValid(upperboundInput!)}
           onInput={(e) => onInput(e, setUpperboundInput)}
           title="UpperBound!"
-          placeholder="Big!"
         />
       </form>
       <button

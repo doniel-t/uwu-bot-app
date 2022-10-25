@@ -5,6 +5,7 @@ import {
   StringResponse,
 } from '../../../types/stringCommands/stringCommandTypes';
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
+import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 
 export const ChatFormComponent: NextPage = () => {
@@ -24,6 +25,7 @@ export const ChatFormComponent: NextPage = () => {
 
   return (
     <>
+      <ParamDescription paramName="Chat!" description="Start a conversation!" />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
@@ -33,7 +35,6 @@ export const ChatFormComponent: NextPage = () => {
           stringInput={cleverbotInput!}
           onInput={onInput}
           title="Chat!"
-          placeholder="No bitches?"
         />
       </form>
       <button

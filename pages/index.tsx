@@ -4,13 +4,16 @@ import UwUfy from '../components/commands/uwufy/UwUfy';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import Ask from '../components/commands/ask/Ask';
-import Choose from '../components/commands/choose/Choose';
 import CommandContainer from '../components/CommandContainer';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>UwU Bot!</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Hero />
       <Navbar />
       <CommandContainer />

@@ -22,7 +22,7 @@ export const RngFormComponent: NextPage = () => {
       <div className="my-2">
         <ParamDescription paramName="LowerBound" description="smaller Number" />
       </div>
-      <ParamDescription paramName="UpperBound" description="smaller Number" />
+      <ParamDescription paramName="UpperBound" description="larger Number" />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
@@ -34,13 +34,13 @@ export const RngFormComponent: NextPage = () => {
           stringInput={lowerboundInput!}
           customIsInputValid={() => isInputValid(lowerboundInput!)}
           onInput={(e) => onInput(e, setLowerboundInput)}
-          title="LowerBound!"
+          title="Smaller!"
         />
         <StringInputField
           stringInput={upperboundInput!}
           customIsInputValid={() => isInputValid(upperboundInput!)}
           onInput={(e) => onInput(e, setUpperboundInput)}
-          title="UpperBound!"
+          title="Larger!"
         />
       </form>
       <button

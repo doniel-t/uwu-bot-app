@@ -25,7 +25,7 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
       <span>{title}</span>
       <input
         type="text"
-        className="input input-bordered w-full resize"
+        className="input input-bordered resize w-full"
         onInput={onInput}
         value={stringInput}
       />

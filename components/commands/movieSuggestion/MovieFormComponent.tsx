@@ -46,7 +46,7 @@ export const MovieFormComponent: NextPage = () => {
       </form>
       <button
         className="btn btn-primary tooltip tooltip-primary"
-        data-tip="Are you this lonely?"
+        data-tip="Grab some popcorn!"
         onClick={async () =>
           submitMovieRequest(genreInput, minScore, wantTheatreMovie)
         }>

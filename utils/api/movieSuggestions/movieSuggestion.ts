@@ -1,4 +1,5 @@
 import { getScore, getMovieName } from "./parseHTML";
+import fetch from "node-fetch";
 
 export type Movie = {
     name: string;

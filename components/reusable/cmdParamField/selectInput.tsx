@@ -17,7 +17,7 @@ const SelectInput: NextPage<SelectInputParams> = ({
       <select
         className="select w-full max-w-xs mb-4"
         onChange={(e) => setValue(e.currentTarget.value)}>
-        <option disabled defaultValue={title}>
+        <option disabled selected defaultValue={title}>
           {title}
         </option>
         {options.map((option: string) => {

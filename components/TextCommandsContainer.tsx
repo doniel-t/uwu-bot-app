@@ -4,6 +4,7 @@ import Choose from './commands/choose/Choose';
 import Chat from './commands/chat/Chat';
 import Rng from './commands/rng/Rng';
 import UwUfy from './commands/uwufy/UwUfy';
+import MovieSuggestion from './commands/movieSuggestion/MovieSuggestion';
 
 export default function TextCommandContainer() {
   return (
@@ -14,6 +15,7 @@ export default function TextCommandContainer() {
       <Ask />
       <Choose />
       <Rng />
+      <MovieSuggestion />
       <Chat />
     </div>
   );

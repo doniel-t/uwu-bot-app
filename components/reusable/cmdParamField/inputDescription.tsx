@@ -10,7 +10,7 @@ const ParamDescription: NextPage<ParamDescriptionProps> = ({
   description,
 }) => {
   return (
-    <div className="" data-tip="primary">
+    <div className=" opacity-60" data-tip="primary">
       <div className="-mt-2 mb-2 input-group">
         <span className="py-2">{paramName}: </span>
         <kbd className="kbd">{description}</kbd>

@@ -15,10 +15,11 @@ const BASE_URL = "https://www.rottentomatoes.com/browse/";
 export async function fetchMoviesByGenre(
     genre: string,
     minRating: number,
-    wantTheatreMovies: boolean | undefined
+    wantTheatreMovies: boolean
 ): Promise<Movie[]> {
     const movieType = wantTheatreMovies ? movieTypes.theatre : movieTypes.home;
     const genreBasedURL = `${BASE_URL}${movieType}/genres:${genre}~sort:popular?page=${5}`;
+    console.log(genreBasedURL)
     const page = await fetch(genreBasedURL);
     const pageString = await page.text();
     const movies = getMoviesByRating(pageString, minRating);
@@ -42,13 +43,10 @@ export function getMoviesByRating(
         };
         movies.push(movie);
     });
-
-    if (movies.length == 0) movies.push({ name: "Nothing found", score: 0 });
     return movies;
 }
 
 export function getRandomMovie(movieList: Movie[]): Movie {
-    let randIndex = Math.floor(Math.random() * movieList.length - 1);
-    let randMovie = movieList[randIndex];
-    return randMovie;
+    const randIndex = Math.floor(Math.random() * movieList.length - 1);
+    return movieList[randIndex];
 }

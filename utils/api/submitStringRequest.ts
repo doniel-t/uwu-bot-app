@@ -29,7 +29,7 @@ export async function submitStringRequest(apiEndpoint: string, state: StringInpu
     notifySucces(`🥱 ${data.content}`);
 }
 
-function capitalize(string: string): string {
+export function capitalize(string: string): string {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 

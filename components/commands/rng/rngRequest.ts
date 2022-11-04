@@ -1,6 +1,6 @@
 import { RngCommandParams } from "../../../types/numberCommands/numberCommandTypes";
 import { isNumeric } from "../../../utils/api/rng/rng";
-import { notifyError, notifyErrorResponse, notifySucces } from "../../../utils/libs/notify";
+import { notifyError, notifyLoading, notifyUpdate } from "../../../utils/libs/notify";
 
 export function isInputValid(bound: string): boolean {
     const isFieldNotEmpty = bound != undefined && bound != '';
@@ -20,12 +20,13 @@ export async function submitRngRequest(lower: string, upper: string, setRngRespo
         return;
     }
 
+    const toastId = notifyLoading();
     const response = await fetch('/api/rng?' + new URLSearchParams(params));
     if (response.status != 200) {
-        notifyErrorResponse();
+        notifyUpdate(toastId, 'error');
         return;
     }
     const data = await response.json();
     setRngResponse(data);
-    notifySucces(`🥱 ${data.content}`);
+    notifyUpdate(toastId, 'success', data.content);
 }

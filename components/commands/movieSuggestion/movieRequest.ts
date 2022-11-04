@@ -1,14 +1,13 @@
-import { notifyError, notifyCopyToClipboard, notifySucces } from "../../../utils/libs/notify";
+import { notifyError, notifyCopyToClipboard, notifyLoading, notifyUpdate } from "../../../utils/libs/notify";
 import { GENRES } from "./Genres";
 
 export async function submitMovieRequest(genre: string, minScore: number, isInTheatre: boolean) {
-    console.log({ genre, minScore, isInTheatre })
-
     if (!isValid(genre)) {
         notifyError(`GENRE`);
         return;
     }
 
+    const toastId = notifyLoading();
     const response = await fetch(`/api/movieSuggestion?` + new URLSearchParams({
         genre: genre,
         minScore: `${minScore}`,
@@ -16,12 +15,17 @@ export async function submitMovieRequest(genre: string, minScore: number, isInTh
     }));
     const data = await response.json();
 
-    if (navigator && !data.content.includes("Nothing was found")) {
+    if (!data?.content) {
+        notifyUpdate(toastId, 'error');
+        return;
+    }
+
+    if (navigator && !data.content?.includes("Nothing was found")) {
         navigator.clipboard.writeText(data.content);
         notifyCopyToClipboard()
     }
 
-    notifySucces(`🥱 ${data.content}`);
+    notifyUpdate(toastId, 'success', data.content);
 }
 
 function isValid(genre: string) {

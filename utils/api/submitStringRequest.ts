@@ -1,5 +1,6 @@
+import { toast } from "react-toastify";
 import { StringCommandParams, StringInputState } from "../../types/stringCommands/stringCommandTypes";
-import { notifyCopyToClipboard, notifyError, notifySucces } from "../libs/notify";
+import { notifyCopyToClipboard, notifyError, notifyLoading, notifyUpdate } from "../libs/notify";
 
 export async function submitStringRequest(apiEndpoint: string, state: StringInputState, copyToClipboard: boolean, customIsInputValid?: (input: string) => boolean) {
     const params: StringCommandParams = {
@@ -13,6 +14,7 @@ export async function submitStringRequest(apiEndpoint: string, state: StringInpu
         return;
     }
 
+    const toastId = notifyLoading();
     const response = await fetch(`/api/${apiEndpoint}?` + new URLSearchParams(params));
     const data = await response.json();
 
@@ -23,10 +25,16 @@ export async function submitStringRequest(apiEndpoint: string, state: StringInpu
         }
     }
 
+    if (!data?.content) {
+        notifyUpdate(toastId, 'error');
+        return;
+    }
+
     state.setOutput(data);
     //clears input on submit
     state.setInput('');
-    notifySucces(`🥱 ${data.content}`);
+
+    notifyUpdate(toastId, 'success', data.content);
 }
 
 export function capitalize(string: string): string {

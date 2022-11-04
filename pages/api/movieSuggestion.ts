@@ -26,7 +26,6 @@ export default async function handler(
 
     try {
         const fetchedMovies = await fetchMoviesByGenre((genre as string).toLowerCase(), Number(minScore), isInTheatre === 'true');
-        console.log(fetchedMovies)
         if (fetchedMovies.length === 0) {
             res.status(200).json({ content: "Nothing was found 🤡" })
             return;

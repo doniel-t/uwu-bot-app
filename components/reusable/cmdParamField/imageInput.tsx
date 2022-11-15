@@ -24,11 +24,14 @@ const ImageInput: NextPage<ImageInputParams> = ({
       <input
         type="file"
         accept="image/*"
+        placeholder=""
+        id="imageUpload"
         onChange={async (event) => {
           const url = await handleChange(event);
           setImageUploadURL(url!);
         }}
-        className="file-input file-input-bordered file-input-primary w-full max-w-xs my-2"
+        className="file-input file-input-bordered font-semibold file-input-primary 
+        w-full max-w-xs my-2 hover:bg-[#FF2EA4] hover:text-primary-content hover:border-primary-content"
       />
     </>
   );

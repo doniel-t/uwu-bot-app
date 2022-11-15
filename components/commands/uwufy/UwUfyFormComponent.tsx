@@ -24,7 +24,10 @@ export const UwUfyFormComponent: NextPage = () => {
   }
   return (
     <>
-      <ParamDescription paramName="UwUfy!" description="Sentence to UwUfy" />
+      <ParamDescription
+        paramName="UwUfy!"
+        description="Sentence to UwUfy"
+      />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();

@@ -7,7 +7,10 @@ type CheckMarkProps = {
   isInputValid: boolean;
 };
 
-const CheckMark: NextPage<CheckMarkProps> = ({ isInputValid, stringInput }) => {
+const CheckMark: NextPage<CheckMarkProps> = ({
+  isInputValid,
+  stringInput,
+}) => {
   return (
     <div className="flex justify-center self-center translate-x-2 ">
       <div

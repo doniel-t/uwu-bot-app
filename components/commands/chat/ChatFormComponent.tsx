@@ -25,7 +25,10 @@ export const ChatFormComponent: NextPage = () => {
 
   return (
     <>
-      <ParamDescription paramName="Chat!" description="Start a conversation!" />
+      <ParamDescription
+        paramName="Chat!"
+        description="Start a conversation!"
+      />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();

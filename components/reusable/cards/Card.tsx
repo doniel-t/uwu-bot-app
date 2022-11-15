@@ -7,7 +7,11 @@ type CardParams = {
   FormComponent: NextPage<{ className?: string }>;
 };
 
-const Card: React.FC<CardParams> = ({ FormComponent, title, description }) => {
+const Card: React.FC<CardParams> = ({
+  FormComponent,
+  title,
+  description,
+}) => {
   return (
     <>
       <div className="card w-96 bg-[#1d1e2b] shadow-xl mx-12 mt-20 mb-8 flex min-h-[325px] items-start">

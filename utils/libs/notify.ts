@@ -56,3 +56,8 @@ export function notifyUpdate(toastId: Id, type: TypeOptions, content?: string) {
         theme: 'dark',
     })
 }
+
+export function notifyCustomError(message: string) {
+    const id = notifyLoading();
+    notifyUpdate(id, 'error', message);
+}

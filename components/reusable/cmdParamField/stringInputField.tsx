@@ -28,6 +28,7 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
         className="input input-bordered resize w-full"
         onInput={onInput}
         value={stringInput}
+        defaultValue={''}
       />
       <CheckMark isInputValid={isValid} stringInput={stringInput} />
     </label>

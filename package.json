@@ -3,26 +3,33 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.tsx' --write",
     "start": "next start"
   },
   "dependencies": {
+    "@types/tesseract.js": "^2.0.0",
     "cleverbot-free": "^1.1.11",
-    "daisyui": "^2.31.0",
+    "daisyui": "^2.40.1",
+    "image-js": "^0.35.2",
     "next": "latest",
     "node-fetch": "^3.2.10",
+    "prettier": "^2.7.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.6.0",
     "react-toastify": "^9.0.8",
-    "react-wavify": "^1.6.2"
+    "react-wavify": "^1.6.2",
+    "sharp": "^0.31.2",
+    "tesseract.js": "^3.0.3"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
+    "@types/sharp": "^0.31.0",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.2",
-    "typescript": "4.7.2"
+    "typescript": "^4.8.4"
   }
 }

@@ -20,13 +20,23 @@ export const RngFormComponent: NextPage = () => {
   return (
     <>
       <div className="my-2">
-        <ParamDescription paramName="LowerBound" description="smaller Number" />
+        <ParamDescription
+          paramName="LowerBound"
+          description="smaller Number"
+        />
       </div>
-      <ParamDescription paramName="UpperBound" description="larger Number" />
+      <ParamDescription
+        paramName="UpperBound"
+        description="larger Number"
+      />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
-          submitRngRequest(lowerboundInput!, upperboundInput!, setRngResponse);
+          submitRngRequest(
+            lowerboundInput!,
+            upperboundInput!,
+            setRngResponse
+          );
           setLowerboundInput('');
           setUpperboundInput('');
         }}>
@@ -48,7 +58,11 @@ export const RngFormComponent: NextPage = () => {
         className="btn btn-primary tooltip tooltip-primary"
         data-tip="Let RNGesus guide you!"
         onClick={async () => {
-          submitRngRequest(lowerboundInput!, upperboundInput!, setRngResponse);
+          submitRngRequest(
+            lowerboundInput!,
+            upperboundInput!,
+            setRngResponse
+          );
           setLowerboundInput('');
           setUpperboundInput('');
         }}>

@@ -4,20 +4,33 @@ import UwUfy from '../components/commands/uwufy/UwUfy';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import CommandContainer from '../components/CommandContainer';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+
+const CommandContainer = dynamic(
+  () => import('../components/CommandContainer'),
+  {
+    ssr: false,
+  }
+);
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>UwU Bot!</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charSet="UTF-8" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+        />
       </Head>
-      <Hero />
-      <Navbar />
-      <CommandContainer />
-      <ToastContainer />
+      <div className="w-screen min-w-screen">
+        <Hero />
+        <Navbar />
+        <CommandContainer />
+        <ToastContainer />
+      </div>
     </>
   );
 };

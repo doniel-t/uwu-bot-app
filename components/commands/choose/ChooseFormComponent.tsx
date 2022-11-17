@@ -47,7 +47,7 @@ export const ChooseFormComponent: NextPage = () => {
         />
       </form>
       <button
-        className="btn btn-primary tooltip tooltip-primary"
+        className="btn btn-primary tooltip tooltip-primary mt-4"
         data-tip="Bless RNG"
         onClick={async () =>
           submitStringRequest('choose', state, false, (input) =>

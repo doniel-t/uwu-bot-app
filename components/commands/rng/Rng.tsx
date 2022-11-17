@@ -9,6 +9,7 @@ export default function Rng() {
         FormComponent={RngFormComponent}
         title="Rng!"
         description="Random number between Lower- and UpperBound!"
+        maxWidth="40"
       />
     </>
   );

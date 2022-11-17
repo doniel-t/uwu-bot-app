@@ -9,6 +9,7 @@ export default function UwUfy() {
         FormComponent={UwUfyFormComponent}
         title="UwUfy!"
         description="UwUfies the Phrase!"
+        maxWidth="40"
       />
     </>
   );

@@ -20,7 +20,7 @@ export async function submitStringRequest(apiEndpoint: string, state: StringInpu
 
     if (copyToClipboard) {
         if (navigator) {
-            navigator.clipboard.writeText(data.content);
+            navigator.clipboard?.writeText(data.content);
             notifyCopyToClipboard()
         }
     }

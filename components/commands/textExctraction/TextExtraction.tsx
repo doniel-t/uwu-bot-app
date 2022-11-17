@@ -7,8 +7,9 @@ export default function TextExtraction() {
     <>
       <Card
         FormComponent={TextExtractionForm}
-        title="Image Text Extraction!"
+        title="Text Exctraction from Image!"
         description="Lets get text from an Image!"
+        maxWidth="100"
       />
     </>
   );

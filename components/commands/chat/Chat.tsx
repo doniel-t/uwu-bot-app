@@ -9,6 +9,7 @@ export default function Chat() {
         FormComponent={ChatFormComponent}
         title="Chat!"
         description="Lets Chat with each other!"
+        maxWidth="40"
       />
     </>
   );

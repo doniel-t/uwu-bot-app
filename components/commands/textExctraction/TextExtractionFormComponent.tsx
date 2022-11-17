@@ -64,21 +64,17 @@ export const TextExtractionForm: NextPage = () => {
           e.preventDefault();
           handleSubmit();
         }}></form>
-      <div className="flex flex-col w-full">
-        <div className="gridrounded-box place-items-center">
-          <ImageInput
-            handleChange={handleChange}
-            setImageUploadURL={setImageURL}
-            imageUploadURL={imageURL}
-          />
-        </div>
-        <div className="divider font-semibold">OR</div>
-        <div
-          className="grid h-20 card bg-base-300 rounded-box place-items-center
+      <ImageInput
+        handleChange={handleChange}
+        setImageUploadURL={setImageURL}
+        imageUploadURL={imageURL}
+      />
+      <div className="divider font-semibold">OR</div>
+      <div
+        className="grid h-20 card bg-base-300 rounded-box place-items-center
             hover:-translate-y-1 transition hover:border delay-75 border-primary hover:shadow-2xl"
-          onPaste={(e) => handlePaste(e)}>
-          Paste it in here!
-        </div>
+        onPaste={(e) => handlePaste(e)}>
+        Paste it in here!
       </div>
 
       <ToggleInput

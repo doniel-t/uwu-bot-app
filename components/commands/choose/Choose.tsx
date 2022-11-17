@@ -9,6 +9,7 @@ export default function Choose() {
         FormComponent={ChooseFormComponent}
         title="Choose!"
         description="Let me choose for you!"
+        maxWidth="40"
       />
     </>
   );

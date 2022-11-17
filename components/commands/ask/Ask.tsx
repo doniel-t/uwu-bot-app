@@ -9,6 +9,7 @@ export default function Ask() {
         FormComponent={AskFormComponent}
         title="Ask!"
         description="Ask me a Question!"
+        maxWidth="40"
       />
     </>
   );

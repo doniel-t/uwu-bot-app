@@ -34,7 +34,7 @@ export default function Hero() {
           speed: 0.15,
           points: 4,
         }}
-      />
+      />{' '}
     </>
   );
 }

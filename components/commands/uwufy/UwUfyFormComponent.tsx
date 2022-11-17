@@ -40,7 +40,7 @@ export const UwUfyFormComponent: NextPage = () => {
         />
       </form>
       <button
-        className="btn btn-primary tooltip tooltip-primary"
+        className="btn btn-primary tooltip tooltip-primary mt-4"
         data-tip="UwUfy me Daddy!!"
         onClick={async () => submitStringRequest('uwufy', state, true)}>
         LESS GOO!

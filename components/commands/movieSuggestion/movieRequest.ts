@@ -21,7 +21,7 @@ export async function submitMovieRequest(genre: string, minScore: number, isInTh
     }
 
     if (navigator && !data.content?.includes("Nothing was found")) {
-        navigator.clipboard.writeText(data.content);
+        navigator.clipboard?.writeText(data.content);
         notifyCopyToClipboard()
     }
 

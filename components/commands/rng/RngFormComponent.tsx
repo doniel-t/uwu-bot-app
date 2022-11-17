@@ -44,13 +44,13 @@ export const RngFormComponent: NextPage = () => {
           stringInput={lowerboundInput!}
           customIsInputValid={() => isInputValid(lowerboundInput!)}
           onInput={(e) => onInput(e, setLowerboundInput)}
-          title="Smaller!"
+          title="Lower!"
         />
         <StringInputField
           stringInput={upperboundInput!}
           customIsInputValid={() => isInputValid(upperboundInput!)}
           onInput={(e) => onInput(e, setUpperboundInput)}
-          title="Larger!"
+          title="Upper!"
         />
       </form>
       <button

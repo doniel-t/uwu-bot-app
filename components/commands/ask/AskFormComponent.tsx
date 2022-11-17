@@ -42,7 +42,7 @@ export const AskFormComponent: NextPage = () => {
         />
       </form>
       <button
-        className="btn btn-primary tooltip tooltip-primary"
+        className="btn btn-primary tooltip tooltip-primary mt-4"
         data-tip="Ask me for Permission!"
         onClick={async () => submitStringRequest('ask', state, false)}>
         LESS GOO!

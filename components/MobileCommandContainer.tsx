@@ -7,15 +7,17 @@ import UwUfy from './commands/uwufy/UwUfy';
 import MovieSuggestion from './commands/movieSuggestion/MovieSuggestion';
 import TextExtraction from './commands/textExctraction/TextExtraction';
 
-export default function TextCommandContainer() {
+export default function MobileCommandContainer() {
   return (
     <div
       id="textCommandContainer"
-      className="flex flex-wrap justify-evenly items-start w-[57.5%] min-w-[400px]">
+      className="flex flex-wrap justify-around items-center">
       <UwUfy />
       <Chat />
       <Ask />
       <Choose />
+      <TextExtraction />
+      <MovieSuggestion />
       <Rng />
     </div>
   );

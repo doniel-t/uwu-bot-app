@@ -37,7 +37,9 @@ export const ChooseFormComponent: NextPage = () => {
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
-          submitStringRequest('choose', state, false);
+          submitStringRequest('choose', state, false, (input) =>
+            customIsInputValid(input)
+          );
         }}>
         <StringInputField
           stringInput={chooseInput!}

@@ -55,7 +55,7 @@ export const RngFormComponent: NextPage = () => {
       </form>
       <button
         id="submit"
-        className="btn btn-primary tooltip tooltip-primary"
+        className="btn tooltip btn-primary tooltip-primary"
         data-tip="Let RNGesus guide you!"
         onClick={async () => {
           submitRngRequest(

@@ -15,14 +15,14 @@ const SelectInput: NextPage<SelectInputParams> = ({
   return (
     <>
       <select
-        className="select w-full max-w-xs mb-4"
+        className="select mb-4 w-full max-w-xs"
         onChange={(e) => setValue(e.currentTarget.value)}>
         <option disabled selected defaultValue={title}>
           {title}
         </option>
         {options.map((option: string) => {
           return (
-            <option className="text-primary font-semibold" key={option}>
+            <option className="font-semibold text-primary" key={option}>
               {option.toUpperCase()}
             </option>
           );

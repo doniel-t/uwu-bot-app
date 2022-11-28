@@ -6,17 +6,19 @@ import Rng from './commands/rng/Rng';
 import UwUfy from './commands/uwufy/UwUfy';
 import MovieSuggestion from './commands/movieSuggestion/MovieSuggestion';
 import TextExtraction from './commands/textExctraction/TextExtraction';
+import ImageColorExtraction from './commands/imageColorExtractor/ImageColorExtractor';
 
 export default function MobileCommandContainer() {
   return (
     <div
       id="textCommandContainer"
-      className="flex flex-wrap justify-around items-center">
+      className="flex flex-wrap items-center justify-around">
       <UwUfy />
       <Chat />
       <Ask />
       <Choose />
       <TextExtraction />
+      <ImageColorExtraction />
       <MovieSuggestion />
       <Rng />
     </div>

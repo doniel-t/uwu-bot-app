@@ -9,11 +9,11 @@
   "dependencies": {
     "@types/tesseract.js": "^2.0.0",
     "cleverbot-free": "^1.1.11",
+    "color.js": "^1.2.0",
     "daisyui": "^2.40.1",
     "image-js": "^0.35.2",
     "next": "latest",
     "node-fetch": "^3.2.10",
-    "prettier": "^2.7.1",
     "react": "18.1.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "18.1.0",
@@ -30,6 +30,8 @@
     "@types/sharp": "^0.31.0",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
+    "prettier": "^2.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.0",
     "tailwindcss": "^3.1.2",
     "typescript": "^4.8.4"
   }

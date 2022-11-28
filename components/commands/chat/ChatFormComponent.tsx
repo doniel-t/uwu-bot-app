@@ -41,7 +41,7 @@ export const ChatFormComponent: NextPage = () => {
         />
       </form>
       <button
-        className="btn btn-primary tooltip tooltip-primary mt-4"
+        className="btn tooltip btn-primary tooltip-primary mt-4"
         data-tip="Are you this lonely?"
         onClick={async () => submitStringRequest('chat', state, false)}>
         LESS GOO!

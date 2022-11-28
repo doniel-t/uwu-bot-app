@@ -8,7 +8,7 @@ import useMediaQuery from '../utils/hooks/isMobile';
 export default function CommandContainer() {
   const isMobile = useMediaQuery(1000);
   return (
-    <div className="flex justify-center items-start sm:w-screen">
+    <div className="flex items-start justify-center sm:w-screen">
       {isMobile ? (
         <MobileCommandContainer />
       ) : (

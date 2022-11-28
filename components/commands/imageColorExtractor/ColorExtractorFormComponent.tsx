@@ -1,15 +1,20 @@
 import { NextPage } from 'next';
 import { useState, FormEvent, useRef, ChangeEvent } from 'react';
-import { notifyCustomError } from '../../../utils/libs/notify';
+import {
+  notifyCopyToClipboard,
+  notifyCustomError,
+} from '../../../utils/libs/notify';
 import ImageInput from '../../reusable/cmdParamField/imageInput';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import ToggleInput from '../../reusable/cmdParamField/toggleInput';
-import handleTextExtraction from './textExtractionWrapper';
+import handleColorExtraction from './colorExtractor';
 
-export const TextExtractionForm: NextPage = () => {
+export const ColorExtractionForm: NextPage = () => {
   const [imageURL, setImageURL] = useState<string>('');
   const [copyClipboard, setCopyClipboard] = useState<boolean>(false);
-  const [detectedText, setDetectedText] = useState<string>('');
+  const [hexColors, setHexColors] = useState<string[] | undefined>(
+    undefined
+  );
   const imageRef = useRef<HTMLImageElement>(null);
 
   function handleChange(
@@ -50,14 +55,16 @@ export const TextExtractionForm: NextPage = () => {
       return;
     }
     const url = imageURL;
-    await handleTextExtraction(url, copyClipboard, setDetectedText);
+    const hexColors = await handleColorExtraction(url);
+    const hexColorsArr = hexColors.split(',');
+    setHexColors(hexColorsArr);
   }
 
   return (
     <>
       <ParamDescription
         paramName="Image"
-        description="Upload an Image with Text"
+        description="Upload an Image to get the Colors"
       />
       <form
         onSubmit={(e: FormEvent<HTMLElement>) => {
@@ -76,21 +83,38 @@ export const TextExtractionForm: NextPage = () => {
         onPaste={(e) => handlePaste(e)}>
         Paste it in here!
       </div>
-
-      <ToggleInput
-        description="Do you want to copy the Text?"
-        toggleValue={copyClipboard}
-        setToggleValue={setCopyClipboard}
-      />
       <img
         src={imageURL}
         ref={imageRef}
-        className="my-2 rounded-md transition delay-150 ease-in-out"></img>
-      <textarea
-        className="textarea mb-2 max-h-28"
-        placeholder="Text will appear here! 😀"
-        value={detectedText}
-        readOnly={true}></textarea>
+        className="my-4 max-h-[300px] rounded-md object-contain transition delay-150 ease-in-out"></img>
+      <div className="flex justify-between text-center">
+        {hexColors
+          ? hexColors.map((hexColor: string) => {
+              return (
+                <div
+                  key={`wrapper-${hexColor}`}
+                  className="text-evenly my-3 flex justify-between">
+                  <div
+                    key={`div-${hexColor}`}
+                    style={{ backgroundColor: hexColor }}
+                    className={`mx-2 w-8 rounded-md shadow-md`}></div>
+                  <span
+                    className="hover:cursor-pointer"
+                    onClick={() => {
+                      if (navigator) {
+                        navigator.clipboard?.writeText(hexColor);
+                        notifyCopyToClipboard();
+                      }
+                    }}>
+                    <p key={hexColor} className={`font-semibold`}>
+                      {hexColor}
+                    </p>
+                  </span>
+                </div>
+              );
+            })
+          : null}
+      </div>
       <button
         className="btn tooltip btn-primary tooltip-primary"
         data-tip="How about you extract some bitches?"

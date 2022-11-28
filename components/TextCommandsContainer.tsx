@@ -11,7 +11,7 @@ export default function TextCommandContainer() {
   return (
     <div
       id="textCommandContainer"
-      className="flex flex-wrap justify-evenly items-start w-[57.5%] min-w-[400px]">
+      className="flex w-[57.5%] min-w-[400px] flex-wrap items-start justify-evenly">
       <UwUfy />
       <Chat />
       <Ask />

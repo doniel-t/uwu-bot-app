@@ -56,7 +56,20 @@ export function notifyUpdate(toastId: Id, type: TypeOptions, content?: string) {
         theme: 'dark',
     })
 }
-
+export function notifySuccess(content?: string) {
+    const parsedContent = content ? `🥱${content}` : 'Oops something went wrong ☠️'
+    toast.success(parsedContent, {
+        isLoading: false,
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+    })
+}
 export function notifyCustomError(message: string) {
     const id = notifyLoading();
     notifyUpdate(id, 'error', message);

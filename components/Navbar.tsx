@@ -1,8 +1,8 @@
 export default function Navbar() {
   return (
     <div
-      className="navbar bg-[#1d1e2b] mb-4 drop-shadow-lg fixed top-0 left-0 right-0 z-10 
-        bg-opacity-30 backdrop-filter backdrop-blur-[60px]">
+      className="navbar fixed top-0 left-0 right-0 z-10 mb-4 bg-[#1d1e2b] bg-opacity-30 
+        drop-shadow-lg backdrop-blur-[60px] backdrop-filter">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -22,7 +22,7 @@ export default function Navbar() {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow">
             <li>
               <a href="#home">Home</a>
             </li>
@@ -36,7 +36,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a href="#home" className="btn btn-ghost normal-case text-xl">
+        <a href="#home" className="btn btn-ghost text-xl normal-case">
           UwU-Bot
         </a>
       </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
               />
             </svg>
-            <span className="badge badge-xs badge-primary indicator-item"></span>
+            <span className="badge indicator-item badge-primary badge-xs"></span>
           </div>
         </button>
       </div>

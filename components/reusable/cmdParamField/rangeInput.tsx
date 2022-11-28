@@ -15,7 +15,7 @@ const RangeInput: NextPage<RangeParams> = ({
   setCurrentValue,
 }) => {
   return (
-    <div className="flex flex-wrap justify-between my-2">
+    <div className="my-2 flex flex-wrap justify-between">
       <input
         type="range"
         min={minValue}

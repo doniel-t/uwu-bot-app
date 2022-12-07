@@ -2,8 +2,6 @@ import { NextPage } from 'next';
 import { useState, FormEvent, Dispatch, SetStateAction } from 'react';
 import { StringResponse } from '../../../types/stringCommands/stringCommandTypes';
 import CheckMark from '../../reusable/checkMark/checkMark';
-import ParamDescription from '../../reusable/cmdParamField/inputDescription';
-import StringInputField from '../../reusable/cmdParamField/stringInputField';
 import { submitRngRequest, isInputValid } from './rngRequest';
 
 export const RngFormComponent: NextPage = () => {

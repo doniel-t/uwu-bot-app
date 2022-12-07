@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import TextCommandContainer from './TextCommandsContainer';
 import NonTextBasedCommands from './NonTextBasedCommands';
 import useMediaQuery from '../utils/hooks/isMobile';

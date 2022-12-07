@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import { useState, FormEvent } from 'react';
 import { StringResponse } from '../../../types/stringCommands/stringCommandTypes';
-import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import RangeInput from '../../reusable/cmdParamField/rangeInput';
 import SelectInput from '../../reusable/cmdParamField/selectInput';

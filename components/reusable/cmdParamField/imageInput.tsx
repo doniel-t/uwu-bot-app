@@ -3,8 +3,6 @@ import {
   ChangeEvent,
   Dispatch,
   SetStateAction,
-  useRef,
-  useState,
 } from 'react';
 
 type ImageInputParams = {

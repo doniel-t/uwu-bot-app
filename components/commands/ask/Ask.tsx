@@ -1,5 +1,4 @@
 import React from 'react';
-import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import Card from '../../reusable/cards/Card';
 import { AskFormComponent } from './AskFormComponent';
 

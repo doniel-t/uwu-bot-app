@@ -5,7 +5,6 @@ import {
   StringResponse,
 } from '../../../types/stringCommands/stringCommandTypes';
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
-import CheckMark from '../../reusable/checkMark/checkMark';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
 

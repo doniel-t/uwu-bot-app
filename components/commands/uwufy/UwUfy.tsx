@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '../../reusable/cards/Card';
 import ImageCard from '../../reusable/cards/ImageCard';
 import { UwUfyFormComponent } from './UwUfyFormComponent';
 

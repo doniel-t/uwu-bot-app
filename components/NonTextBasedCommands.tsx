@@ -1,4 +1,3 @@
-import { NextPage } from 'next/types';
 import React from 'react';
 import ImageColorExtraction from './commands/imageColorExtractor/ImageColorExtractor';
 import MovieSuggestion from './commands/movieSuggestion/MovieSuggestion';

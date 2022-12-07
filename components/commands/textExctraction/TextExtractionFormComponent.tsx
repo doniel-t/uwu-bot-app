@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import { useState, FormEvent, useRef, ChangeEvent } from 'react';
 import { notifyCustomError } from '../../../utils/libs/notify';
-import CheckMark from '../../reusable/checkMark/checkMark';
 import ImageInput from '../../reusable/cmdParamField/imageInput';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import ToggleInput from '../../reusable/cmdParamField/toggleInput';

@@ -6,7 +6,6 @@ import {
 } from '../../../utils/libs/notify';
 import ImageInput from '../../reusable/cmdParamField/imageInput';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
-import ToggleInput from '../../reusable/cmdParamField/toggleInput';
 import handleColorExtraction from './colorExtractor';
 
 export const ColorExtractionForm: NextPage = () => {

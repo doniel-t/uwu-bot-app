@@ -1,6 +1,5 @@
 import { NextPage } from 'next/types';
 import React from 'react';
-import { filter } from 'vue/types/umd';
 
 type CardParams = {
   title: string;

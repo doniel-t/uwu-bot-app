@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import useMediaQuery from '../utils/hooks/isMobile';
 
 const CommandContainer = dynamic(
   () => import('../components/CommandContainer'),
@@ -15,6 +16,7 @@ const CommandContainer = dynamic(
 );
 
 const Home: NextPage = () => {
+  const isMobile = useMediaQuery(1000);
   return (
     <>
       <Head>
@@ -23,11 +25,12 @@ const Home: NextPage = () => {
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
+          lang="en"
         />
       </Head>
       <div className="w-full">
         <Hero />
-        <Navbar />
+        {!isMobile ? <Navbar /> : null}
         <CommandContainer />
         <ToastContainer />
       </div>

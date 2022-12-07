@@ -15,14 +15,14 @@ const Card: React.FC<CardParams> = ({
   description,
   maxHeight,
 }) => {
-  const isBigCard = useMediaQuery(1400);
+  const isMobile = useMediaQuery(600);
 
   return (
     <>
       <div
-        className={`min[450px]:min-w-[400px] card mx-12 mt-20
+        className={`card mx-12 mt-20
         mb-8 flex items-center max-h-[${maxHeight}px] min-h-[350px] w-full 
-        max-w-[80%] bg-[#1d1e2b] shadow-xl breakPoint:max-w-[40%] sm:min-w-[400px]`}>
+        max-w-[80%] bg-[#1d1e2b] shadow-xl breakPoint:max-w-[40%] sm:max-w-[400px]`}>
         <div className="card-body flex w-full ">
           <h2 className="items-start pt-1 text-2xl font-semibold text-primary">
             {title}

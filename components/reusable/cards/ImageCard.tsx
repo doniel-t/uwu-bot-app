@@ -24,13 +24,14 @@ const ImageCard: React.FC<CardParams> = ({
         flex bg-cover max-h-[${maxHeight}px] min[350px]:min-w-[325px] min-h-[250px] w-full 
         items-center bg-[#1d1e2b]
         object-fill
-        shadow-xl 
-        sm:w-full sm:max-w-[80%] lg:min-w-[400px] lg:max-w-[65%]`}>
+        shadow-xl
+        sm:w-full sm:max-w-[400px] lg:min-w-[400px] lg:max-w-[65%]`}>
         <figure className="h-full w-full">
-          <img
+          <video
             src={`${bgUrl}`}
-            alt="fancy background omegalul"
-            className="scale-[1.8] object-fill opacity-30 blur"
+            loop={true}
+            autoPlay={true}
+            className="scale-[1.8] object-fill opacity-25 blur"
           />
         </figure>
         <div className="card-body">

@@ -17,10 +17,10 @@ export default function MobileCommandContainer() {
       <Chat />
       <Ask />
       <Choose />
-      <TextExtraction />
-      <ImageColorExtraction />
-      <MovieSuggestion />
       <Rng />
+      <TextExtraction />
+      <MovieSuggestion />
+      <ImageColorExtraction />
     </div>
   );
 }

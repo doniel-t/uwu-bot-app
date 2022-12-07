@@ -11,7 +11,6 @@ export default function CommandContainer() {
   const isMobile = useMediaQuery(1000);
   let textCommandsRef = React.createRef<HTMLDivElement>();
   let nonTextCommandsRef = React.createRef<HTMLDivElement>();
-  console.log(isMobile);
 
   const visibleContainer: ContainerTypes = useOnScreen(textCommandsRef)
     ? 'text'

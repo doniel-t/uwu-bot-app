@@ -9,7 +9,7 @@ export default function MovieSuggestion() {
         FormComponent={MovieFormComponent}
         title="Movie Suggestion!"
         description="Let me choose a movie for you!"
-        maxWidth="100"
+        maxHeight="600"
       />
     </>
   );

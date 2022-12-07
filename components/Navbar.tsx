@@ -30,7 +30,7 @@ export default function Navbar() {
               <a href="#textCommandContainer">Text based Commands</a>
             </li>
             <li>
-              <a>About</a>
+              <a href="#nonTextCommandContainer">Based Commands</a>
             </li>
           </ul>
         </div>

@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           content="initial-scale=1.0, width=device-width"
         />
       </Head>
-      <div className="w-screen min-w-screen">
+      <div className="w-full">
         <Hero />
         <Navbar />
         <CommandContainer />

@@ -3,14 +3,11 @@ import React from 'react';
 import { AiFillCheckCircle } from 'react-icons/ai';
 
 type CheckMarkProps = {
-  stringInput: string;
+  stringInput?: string;
   isInputValid: boolean;
 };
 
-const CheckMark: NextPage<CheckMarkProps> = ({
-  isInputValid,
-  stringInput,
-}) => {
+const CheckMark: NextPage<CheckMarkProps> = ({ isInputValid }) => {
   return (
     <div className="flex translate-x-2 justify-center self-center ">
       <div

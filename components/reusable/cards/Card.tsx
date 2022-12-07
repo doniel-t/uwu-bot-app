@@ -1,33 +1,38 @@
 import { NextPage } from 'next/types';
 import React from 'react';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 type CardParams = {
   title: string;
   description: string;
   FormComponent: NextPage<{ className?: string }>;
-  maxWidth: string;
+  maxHeight: string;
 };
 
 const Card: React.FC<CardParams> = ({
   FormComponent,
   title,
   description,
-  maxWidth,
+  maxHeight,
 }) => {
+  const isBigCard = useMediaQuery(1400);
+
   return (
     <>
       <div
-        className={`min[350px]:min-w-[325px] card
-        mx-12 mt-20 mb-8 flex min-h-[350px] w-full items-center 
-        bg-[#1d1e2b] shadow-xl sm:w-full sm:max-w-[80%] lg:min-w-[400px] lg:max-w-[40%]`}>
-        <div className="card-body flex ">
-          <h2 className="card-title pt-2 text-xl text-primary">{title}</h2>
-          <div className="form-control flex-grow self-end">
+        className={`min[450px]:min-w-[400px] card mx-12 mt-20
+        mb-8 flex items-center max-h-[${maxHeight}px] min-h-[350px] w-full 
+        max-w-[80%] bg-[#1d1e2b] shadow-xl breakPoint:max-w-[40%] sm:min-w-[400px]`}>
+        <div className="card-body flex w-full ">
+          <h2 className="items-start pt-1 text-2xl font-semibold text-primary">
+            {title}
+          </h2>
+          <div className="w-full flex-grow justify-center ">
             <label className="label">
-              <span className="label-text">{description}</span>
+              <span className=" text-md font-medium">{description}</span>
             </label>
             <div className="divider"></div>
-            <div className="mt-4 flex flex-grow flex-col justify-end pb-4">
+            <div className="mt-4 flex flex-grow flex-col pb-4">
               <FormComponent />
             </div>
           </div>

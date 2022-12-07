@@ -1,15 +1,16 @@
 import React from 'react';
-import Card from '../../reusable/cards/Card';
+import ImageCard from '../../reusable/cards/ImageCard';
 import { TextExtractionForm } from './TextExtractionFormComponent';
 
 export default function TextExtraction() {
   return (
     <>
-      <Card
+      <ImageCard
         FormComponent={TextExtractionForm}
         title="Text Exctraction from Image!"
         description="Lets get text from an Image!"
-        maxWidth="100"
+        bgUrl="/textExtraction_bg.gif"
+        maxHeight="600"
       />
     </>
   );

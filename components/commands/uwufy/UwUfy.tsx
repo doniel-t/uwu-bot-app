@@ -1,15 +1,17 @@
 import React from 'react';
 import Card from '../../reusable/cards/Card';
+import ImageCard from '../../reusable/cards/ImageCard';
 import { UwUfyFormComponent } from './UwUfyFormComponent';
 
 export default function UwUfy() {
   return (
     <>
-      <Card
+      <ImageCard
         FormComponent={UwUfyFormComponent}
         title="UwUfy!"
         description="UwUfies the Phrase!"
-        maxWidth="40"
+        bgUrl="/uwufy_bg.gif"
+        maxHeight="350"
       />
     </>
   );

@@ -30,26 +30,30 @@ export const ChooseFormComponent: NextPage = () => {
 
   return (
     <>
-      <ParamDescription
-        paramName="Choose!"
-        description="Option1, Option2, ..."
-      />
-      <form
-        onSubmit={(e: FormEvent<HTMLElement>) => {
-          e.preventDefault();
-          submitStringRequest('choose', state, false, (input) =>
-            customIsInputValid(input)
-          );
-        }}>
-        <StringInputField
-          stringInput={chooseInput!}
-          onInput={(e) => onInput(e)}
-          customIsInputValid={customIsInputValid}
-          title="Choose!"
-        />
-      </form>
+      <div className="flex w-5/6 flex-col self-end p-2">
+        <div className="-ml-20 self-center">
+          <ParamDescription
+            paramName="Choose!"
+            description="Option1, Option2, ..."
+          />
+        </div>
+        <form
+          onSubmit={(e: FormEvent<HTMLElement>) => {
+            e.preventDefault();
+            submitStringRequest('choose', state, false, (input) =>
+              customIsInputValid(input)
+            );
+          }}>
+          <StringInputField
+            stringInput={chooseInput!}
+            onInput={(e) => onInput(e)}
+            customIsInputValid={customIsInputValid}
+            title="Choose!"
+          />
+        </form>
+      </div>
       <button
-        className="btn tooltip btn-primary tooltip-primary mt-4"
+        className="btn tooltip btn-primary tooltip-primary mt-4 w-5/6 self-center"
         data-tip="Bless RNG"
         onClick={async () =>
           submitStringRequest('choose', state, false, (input) =>
@@ -57,7 +61,7 @@ export const ChooseFormComponent: NextPage = () => {
           )
         }>
         LESS GOO!
-      </button>
+      </button>{' '}
     </>
   );
 };

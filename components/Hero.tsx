@@ -34,7 +34,17 @@ export default function Hero() {
           speed: 0.15,
           points: 4,
         }}
-      />{' '}
+      />
+      <Wave
+        fill="#FF7AC6"
+        className="relative z-0 -mt-8 -translate-y-[120%] rotate-180"
+        options={{
+          height: 20,
+          amplitude: 60,
+          speed: 0.15,
+          points: 4,
+        }}
+      />
     </>
   );
 }

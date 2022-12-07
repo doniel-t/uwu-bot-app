@@ -9,7 +9,7 @@ export default function ImageColorExtraction() {
         FormComponent={ColorExtractionForm}
         title="Hex Color Extraction from Image!"
         description="Gives you the 3 most prominent Colors in an Image"
-        maxWidth="100"
+        maxHeight="600"
       />
     </>
   );

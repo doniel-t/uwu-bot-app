@@ -24,21 +24,24 @@ export const UwUfyFormComponent: NextPage = () => {
   }
   return (
     <>
-      <ParamDescription
-        paramName="UwUfy!"
-        description="Sentence to UwUfy"
-      />
-      <form
-        onSubmit={(e: FormEvent<HTMLElement>) => {
-          e.preventDefault();
-          submitStringRequest('uwufy', state, true);
-        }}>
-        <StringInputField
-          stringInput={uwufyInput!}
-          onInput={onInput}
-          title="UwUfy!"
+      <div className="flex flex-col items-center">
+        <form
+          onSubmit={(e: FormEvent<HTMLElement>) => {
+            e.preventDefault();
+            submitStringRequest('uwufy', state, true);
+          }}></form>
+        <ParamDescription
+          paramName="UwUfy!"
+          description="Sentence to UwUfy"
         />
-      </form>
+        <div className="ml-16 flex w-full">
+          <StringInputField
+            stringInput={uwufyInput!}
+            onInput={onInput}
+            title="UwUfy!"
+          />
+        </div>
+      </div>
       <button
         className="btn tooltip btn-primary tooltip-primary mt-4"
         data-tip="UwUfy me Daddy!!"

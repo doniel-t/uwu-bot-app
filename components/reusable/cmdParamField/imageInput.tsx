@@ -31,7 +31,7 @@ const ImageInput: NextPage<ImageInputParams> = ({
           setImageUploadURL(url!);
         }}
         className="file-input file-input-bordered file-input-primary my-2 
-        w-full max-w-xs font-semibold hover:border-primary-content hover:bg-[#FF2EA4] hover:text-primary-content"
+        w-full max-w-[24rem] font-semibold hover:border-primary-content hover:bg-[#FF2EA4] hover:text-primary-content"
       />
     </>
   );

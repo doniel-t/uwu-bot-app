@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import { useState, FormEvent, useRef, ChangeEvent } from 'react';
 import { notifyCustomError } from '../../../utils/libs/notify';
+import CheckMark from '../../reusable/checkMark/checkMark';
 import ImageInput from '../../reusable/cmdParamField/imageInput';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import ToggleInput from '../../reusable/cmdParamField/toggleInput';
@@ -55,20 +56,23 @@ export const TextExtractionForm: NextPage = () => {
 
   return (
     <>
-      <ParamDescription
-        paramName="Image"
-        description="Upload an Image with Text"
-      />
-      <form
-        onSubmit={(e: FormEvent<HTMLElement>) => {
-          e.preventDefault();
-          handleSubmit();
-        }}></form>
-      <ImageInput
-        handleChange={handleChange}
-        setImageUploadURL={setImageURL}
-        imageUploadURL={imageURL}
-      />
+      <div className="mt-4 flex flex-col items-center">
+        <ParamDescription
+          paramName="Image"
+          description="Upload an Image with Text"
+        />
+        <form
+          onSubmit={(e: FormEvent<HTMLElement>) => {
+            e.preventDefault();
+            handleSubmit();
+          }}></form>
+        <ImageInput
+          handleChange={handleChange}
+          setImageUploadURL={setImageURL}
+          imageUploadURL={imageURL}
+        />
+      </div>
+
       <div className="divider font-semibold">OR</div>
       <div
         className="card rounded-box grid h-20 place-items-center border-primary
@@ -85,7 +89,7 @@ export const TextExtractionForm: NextPage = () => {
       <img
         src={imageURL}
         ref={imageRef}
-        className="my-2 rounded-md transition delay-150 ease-in-out"></img>
+        className="my-2 max-h-24 rounded-md transition delay-150 ease-in-out"></img>
       <textarea
         className="textarea mb-2 max-h-28"
         placeholder="Text will appear here! 😀"

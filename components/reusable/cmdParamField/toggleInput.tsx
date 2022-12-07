@@ -13,7 +13,7 @@ const ToggleInput: NextPage<ToggleParams> = ({
   setToggleValue,
 }) => {
   return (
-    <div className="form-control py-2">
+    <div className="form-control w-full py-2">
       <label className="label cursor-pointer">
         <span className="label-text ">{description}</span>
         <input

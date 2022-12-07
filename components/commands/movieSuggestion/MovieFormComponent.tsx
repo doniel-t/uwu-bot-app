@@ -19,6 +19,7 @@ export const MovieFormComponent: NextPage = () => {
   return (
     <>
       <form
+        className="flex w-full flex-col items-center self-center p-2"
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
           submitMovieRequest(genreInput, minScore, wantTheatreMovie);
@@ -28,24 +29,30 @@ export const MovieFormComponent: NextPage = () => {
           options={GENRES}
           setValue={setGenreInput}
         />
-        <ParamDescription
-          paramName="MinScore!"
-          description="Lowest possible score"
-        />
-        <RangeInput
-          minValue={0}
-          maxValue={100}
-          setCurrentValue={setMinScore}
-          currentValue={minScore}
-        />
-        <ToggleInput
-          description="Want to go to the theatre?"
-          toggleValue={wantTheatreMovie}
-          setToggleValue={setWantTheatreMovie}
-        />
+        <div className="divider"></div>
+        <div className="mt-2 flex w-full flex-col items-center">
+          <ParamDescription
+            paramName="MinScore!"
+            description="Lowest possible score"
+          />
+          <RangeInput
+            minValue={0}
+            maxValue={100}
+            setCurrentValue={setMinScore}
+            currentValue={minScore}
+          />
+        </div>
+
+        <div className="w-[75%] justify-evenly">
+          <ToggleInput
+            description="Want to go to the theatre?"
+            toggleValue={wantTheatreMovie}
+            setToggleValue={setWantTheatreMovie}
+          />
+        </div>
       </form>
       <button
-        className="btn tooltip btn-primary tooltip-primary"
+        className="btn tooltip btn-primary tooltip-primary w-5/6 self-center"
         data-tip="Grab some popcorn!"
         onClick={async () =>
           submitMovieRequest(genreInput, minScore, wantTheatreMovie)

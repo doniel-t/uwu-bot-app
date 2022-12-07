@@ -21,17 +21,18 @@ const StringInputField: NextPage<StringInputFieldProps> = ({
     : isInputValid(stringInput);
 
   return (
-    <label className="input-group my-2">
-      <span>{title}</span>
-      <input
-        type="text"
-        className="input input-bordered w-full resize"
-        onInput={onInput}
-        value={stringInput}
-        defaultValue={''}
-      />
-      <CheckMark isInputValid={isValid} stringInput={stringInput} />
-    </label>
+    <>
+      <div className="flex w-full items-center justify-center">
+        <input
+          type="text"
+          className="input-border input w-[30vw] max-w-xs border p-4"
+          onInput={onInput}
+          value={stringInput}
+          defaultValue={''}
+        />
+        <CheckMark isInputValid={isValid} stringInput={stringInput} />
+      </div>
+    </>
   );
 };
 

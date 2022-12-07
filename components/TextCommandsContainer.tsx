@@ -4,15 +4,20 @@ import Choose from './commands/choose/Choose';
 import Chat from './commands/chat/Chat';
 import Rng from './commands/rng/Rng';
 import UwUfy from './commands/uwufy/UwUfy';
+import useMediaQuery from '../utils/hooks/isMobile';
 
 const TextCommandContainer = React.forwardRef<HTMLDivElement>(
   (props, ref) => {
+    const isMobile = useMediaQuery(1000);
     return (
       <div
         ref={ref}
         id="textCommandContainer"
         className="my-4 mx-2 flex h-full w-full flex-grow flex-col">
-        <div className="ml-24 mt-6 h-32 w-5/6 flex-row items-center justify-center">
+        <div
+          className={`${
+            !isMobile ? 'ml-24' : ''
+          } mt-6 h-32 w-5/6 flex-row items-center justify-center`}>
           <p className="my-2 flex flex-auto font-semibold text-primary">
             Hello Gamer!
           </p>

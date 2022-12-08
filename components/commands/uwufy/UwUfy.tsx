@@ -9,7 +9,7 @@ export default function UwUfy() {
         FormComponent={UwUfyFormComponent}
         title="UwUfy!"
         description="UwUfies the Phrase!"
-        bgUrl="/uwufy_bg.mp4"
+        bgUrl="/uwufy_bg.gif"
         maxHeight="350"
       />
     </>

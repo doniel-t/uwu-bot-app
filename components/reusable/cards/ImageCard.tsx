@@ -27,10 +27,8 @@ const ImageCard: React.FC<CardParams> = ({
         shadow-xl
         sm:w-full sm:max-w-[400px] lg:min-w-[400px] lg:max-w-[65%]`}>
         <figure className="h-full w-full">
-          <video
+          <img
             src={`${bgUrl}`}
-            loop={true}
-            autoPlay={true}
             className="scale-[1.8] object-fill opacity-25 blur"
           />
         </figure>

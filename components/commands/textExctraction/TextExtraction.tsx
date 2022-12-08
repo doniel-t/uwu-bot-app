@@ -9,7 +9,7 @@ export default function TextExtraction() {
         FormComponent={TextExtractionForm}
         title="Text Exctraction from Image!"
         description="Lets get text from an Image!"
-        bgUrl="https://github.com/doniel-t/uwu-bot-app/raw/main/public//textExtraction_bg.mp4"
+        bgUrl="https://github.com/doniel-t/uwu-bot-app/raw/main/public//textExtraction_bg.gif"
         maxHeight="600"
       />
     </>

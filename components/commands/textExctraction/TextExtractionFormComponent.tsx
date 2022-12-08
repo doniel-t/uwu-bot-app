@@ -55,11 +55,13 @@ export const TextExtractionForm: NextPage = () => {
 
   return (
     <>
-      <div className="mt-4 flex flex-col items-center">
-        <ParamDescription
-          paramName="Image"
-          description="Upload an Image with Text"
-        />
+      <div className="flex w-5/6 flex-col self-end p-2">
+        <div className="-ml-20 self-center">
+          <ParamDescription
+            paramName="Image"
+            description="Upload an Image with Text"
+          />
+        </div>
         <form
           onSubmit={(e: FormEvent<HTMLElement>) => {
             e.preventDefault();
@@ -74,7 +76,7 @@ export const TextExtractionForm: NextPage = () => {
 
       <div className="divider font-semibold">OR</div>
       <div
-        className="card rounded-box grid h-20 place-items-center border-primary
+        className="border-primar card rounded-box grid h-20 place-items-center
             bg-base-300 transition delay-75 hover:-translate-y-1 hover:border hover:shadow-2xl"
         onPaste={(e) => handlePaste(e)}>
         Paste it in here!

@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           lang="en"
         />
       </Head>
-      <div className="w-full">
+      <div className="w-full max-w-[100vw]">
         <Hero />
         {!isMobile ? <Navbar /> : null}
         <CommandContainer />

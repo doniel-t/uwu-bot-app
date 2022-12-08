@@ -22,10 +22,11 @@ const ImageCard: React.FC<CardParams> = ({
         className={`
         card image-full z-0 mx-12 mt-20 mb-8
         flex bg-cover max-h-[${maxHeight}px] min[350px]:min-w-[325px] min-h-[250px] w-full 
-        items-center bg-[#1d1e2b]
+        items-center
+        bg-[#1d1e2b]
         object-fill
         shadow-xl
-        sm:w-full sm:max-w-[400px] lg:min-w-[400px] lg:max-w-[65%]`}>
+        sm:w-full sm:min-w-[400px] sm:max-w-[400px] lg:min-w-[400px] lg:max-w-[65%]`}>
         <figure className="h-full w-full">
           <video
             src={`${bgUrl}`}
@@ -45,7 +46,7 @@ const ImageCard: React.FC<CardParams> = ({
               <span className="label-text text-lg">{description}</span>
             </label>
             <div className="divider"></div>
-            <div className="mt-4 flex w-[30vw] flex-grow flex-col justify-center pb-4">
+            <div className="mt-4 flex w-[30vw] min-w-[300px] flex-grow flex-col pb-4">
               <FormComponent />
             </div>
           </div>

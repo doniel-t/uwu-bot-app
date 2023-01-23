@@ -5,3 +5,14 @@
 html {
   scroll-behavior: smooth;
 }
+
+.drag {
+  position: fixed;
+  left: calc(env(titlebar-area-x) + 40px);
+  top: env(titlebar-area-y);
+  width: env(titlebar-area-width);
+  height: env(titlebar-area-height);
+  -webkit-app-region: drag;
+  app-region: drag;
+  z-index: 999;
+}

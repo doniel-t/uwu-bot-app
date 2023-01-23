@@ -31,6 +31,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <div className="w-full max-w-[100vw]">
+        <div className="min-w-[100vw] h-[20px] drag"></div>
         <Hero />
         {!isMobile ? <Navbar /> : null}
         <CommandContainer />

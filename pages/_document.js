@@ -7,7 +7,8 @@ class MyDocument extends Document {
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
-          <meta name="theme-color" content="#fff" />
+          <meta name="msapplication-TileColor" content="#21222C"></meta>
+          <meta name="theme-color" content="#21222C"></meta>
         </Head>
         <body>
           <Main />

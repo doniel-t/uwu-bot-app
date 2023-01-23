@@ -1,12 +1,13 @@
 {
   "name": "UwU Bot App",
   "short_name": "UwU Bot App",
-  "theme_color": "#fff",
-  "background_color": "#fff",
-  "display": "standalone",
+  "theme_color": "#000",
+  "background_color": "#000",
+  "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
+  "display_override": ["window-controls-overlay"],
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

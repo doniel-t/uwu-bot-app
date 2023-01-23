@@ -27,7 +27,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-<div className="mb-32" >
+      <div className="mb-32" >
           <Wave
             fill="#FF7AC6"
             className="z-0"

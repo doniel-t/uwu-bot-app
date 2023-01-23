@@ -3,29 +3,17 @@ based on [UwU Bot for Discord](https://github.com/doniel-t/uwu-botv2)
 
 Dashboard esq frontend for uwubots(and more) commands built only for the memes
 
-<table>
-<tr>
-<td>
+<h3>
     <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/doniel-t/uwu-bot-app/production">
-</td>
-
-<td>
     <img alt="GitHub" src="https://img.shields.io/github/license/doniel-t/uwu-bot-app">
-</td>
-<td>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doniel-t/uwu-bot-app">
-</td>
-<td>
     <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doniel-t/uwu-bot-app">
-</td>
-<td>
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doniel-t/uwu-bot-app">
-</td>
-</tr>
-</table>
+</h3>
 
-# [Live Demo](https://uwu-bot-app.vercel.app/)
-
+## [Live Demo](https://uwu-bot-app.vercel.app/)
+<br>
+<br>
 # Self hosting guide
 
 ## requirements:

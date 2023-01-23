@@ -7,6 +7,7 @@ import {
 import ImageInput from '../../reusable/cmdParamField/imageInput';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import handleColorExtraction from './colorExtractor';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const ColorExtractionForm: NextPage = () => {
   const [imageURL, setImageURL] = useState<string>('');
@@ -59,6 +60,8 @@ export const ColorExtractionForm: NextPage = () => {
     setHexColors(hexColorsArr);
   }
 
+  const isMobile = useMediaQuery(500);
+
   return (
     <>
       <div className="flex w-full flex-col self-center p-2">
@@ -107,7 +110,7 @@ export const ColorExtractionForm: NextPage = () => {
                       onClick={() => {
                         if (navigator) {
                           navigator.clipboard?.writeText(hexColor);
-                          notifyCopyToClipboard();
+                          notifyCopyToClipboard(isMobile);
                         }
                       }}>
                       <p key={hexColor} className={`font-semibold`}>

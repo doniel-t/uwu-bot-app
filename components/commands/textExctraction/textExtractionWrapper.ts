@@ -3,7 +3,7 @@ import { notifyLoading, notifyCopyToClipboard, notifyUpdate, notifyCustomError }
 import { Image } from 'image-js';
 import { Dispatch, SetStateAction } from "react";
 
-export default async function handleTextExtraction(url: string, copyClipboard: boolean, setDetectedText: Dispatch<SetStateAction<string>>) {
+export default async function handleTextExtraction(url: string, copyClipboard: boolean, setDetectedText: Dispatch<SetStateAction<string>>, isMobile? :boolean) {
     try {
         const img = await Image.load(url);
         const editedImage = img
@@ -16,7 +16,7 @@ export default async function handleTextExtraction(url: string, copyClipboard: b
         if (navigator) {
             if (copyClipboard) {
                 navigator.clipboard.writeText(res.data.text);
-                notifyCopyToClipboard();
+                notifyCopyToClipboard(isMobile ?? false);
             }
         }
         setDetectedText(res.data.text);

@@ -7,10 +7,13 @@ import {
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const UwUfyFormComponent: NextPage = () => {
   const [uwufied, setUwufied] = useState<StringResponse>();
   const [uwufyInput, setUwufyInput] = useState<string>();
+
+  const isMobile = useMediaQuery(500);
 
   const state: StringInputState = {
     input: uwufyInput!,
@@ -28,7 +31,7 @@ export const UwUfyFormComponent: NextPage = () => {
         <form
           onSubmit={(e: FormEvent<HTMLElement>) => {
             e.preventDefault();
-            submitStringRequest('uwufy', state, true);
+            submitStringRequest('uwufy', state, true, {isMobile});
           }}></form>
         <ParamDescription
           paramName="UwUfy!"
@@ -45,7 +48,7 @@ export const UwUfyFormComponent: NextPage = () => {
       <button
         className="btn tooltip btn-primary tooltip-primary mt-4"
         data-tip="UwUfy me Daddy!!"
-        onClick={async () => submitStringRequest('uwufy', state, true)}>
+        onClick={async () => submitStringRequest('uwufy', state, true, {isMobile})}>
         LESS GOO!
       </button>
     </>

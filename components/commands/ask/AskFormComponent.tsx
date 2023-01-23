@@ -7,10 +7,13 @@ import {
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const AskFormComponent: NextPage = () => {
   const [askResponse, setAskResponse] = useState<StringResponse>();
   const [askInput, setAskInput] = useState<string>();
+
+  const isMobile = useMediaQuery(500);
 
   const state: StringInputState = {
     input: askInput!,
@@ -36,7 +39,7 @@ export const AskFormComponent: NextPage = () => {
         <form
           onSubmit={(e: FormEvent<HTMLElement>) => {
             e.preventDefault();
-            submitStringRequest('ask', state, false);
+            submitStringRequest('ask', state, false, {isMobile});
           }}></form>
         <StringInputField
           stringInput={askInput!}
@@ -48,7 +51,7 @@ export const AskFormComponent: NextPage = () => {
       <button
         className="btn tooltip btn-primary tooltip-primary mt-4 w-5/6 self-center"
         data-tip="Ask me for Permission!"
-        onClick={async () => submitStringRequest('ask', state, false)}>
+        onClick={async () => submitStringRequest('ask', state, false, {isMobile})}>
         LESS GOO!
       </button>
     </>

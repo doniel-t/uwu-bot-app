@@ -5,12 +5,15 @@ import ImageInput from '../../reusable/cmdParamField/imageInput';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import ToggleInput from '../../reusable/cmdParamField/toggleInput';
 import handleTextExtraction from './textExtractionWrapper';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const TextExtractionForm: NextPage = () => {
   const [imageURL, setImageURL] = useState<string>('');
   const [copyClipboard, setCopyClipboard] = useState<boolean>(false);
   const [detectedText, setDetectedText] = useState<string>('');
   const imageRef = useRef<HTMLImageElement>(null);
+
+  const isMobile = useMediaQuery(500);
 
   function handleChange(
     event: ChangeEvent<HTMLInputElement>
@@ -50,7 +53,7 @@ export const TextExtractionForm: NextPage = () => {
       return;
     }
     const url = imageURL;
-    await handleTextExtraction(url, copyClipboard, setDetectedText);
+    await handleTextExtraction(url, copyClipboard, setDetectedText, isMobile);
   }
 
   return (

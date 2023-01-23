@@ -2,12 +2,13 @@ import { toast } from "react-toastify";
 import { StringCommandParams, StringInputState } from "../../types/stringCommands/stringCommandTypes";
 import { notifyCopyToClipboard, notifyError, notifyLoading, notifyUpdate } from "../libs/notify";
 
-export async function submitStringRequest(apiEndpoint: string, state: StringInputState, copyToClipboard: boolean, customIsInputValid?: (input: string) => boolean) {
+export async function submitStringRequest(apiEndpoint: string, state: StringInputState, copyToClipboard: boolean, options? :{ customIsInputValid?: (input: string) => boolean, isMobile? :boolean}) {
     const params: StringCommandParams = {
         input: state.input,
     };
+    const parsedOptions = options ?? {customIsInputValid: undefined, isMobile: false}
 
-    const isValid = customIsInputValid ? customIsInputValid(state.input) : isInputValid(state.input)
+    const isValid = parsedOptions.customIsInputValid ? parsedOptions.customIsInputValid(state.input) : isInputValid(state.input)
 
     if (!isValid) {
         notifyError(`${capitalize(apiEndpoint)}!`);
@@ -21,7 +22,7 @@ export async function submitStringRequest(apiEndpoint: string, state: StringInpu
     if (copyToClipboard) {
         if (navigator) {
             navigator.clipboard?.writeText(data.content);
-            notifyCopyToClipboard()
+            notifyCopyToClipboard(parsedOptions.isMobile ?? false)
         }
     }
 

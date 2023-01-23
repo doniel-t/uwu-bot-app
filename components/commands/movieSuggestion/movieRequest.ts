@@ -1,7 +1,7 @@
 import { notifyError, notifyCopyToClipboard, notifyLoading, notifyUpdate } from "../../../utils/libs/notify";
 import { GENRES } from "./Genres";
 
-export async function submitMovieRequest(genre: string, minScore: number, isInTheatre: boolean) {
+export async function submitMovieRequest(genre: string, minScore: number, isInTheatre: boolean, isMobile? :boolean) {
     if (!isValid(genre)) {
         notifyError(`GENRE`);
         return;
@@ -22,7 +22,7 @@ export async function submitMovieRequest(genre: string, minScore: number, isInTh
 
     if (navigator && !data.content?.includes("Nothing was found")) {
         navigator.clipboard?.writeText(data.content);
-        notifyCopyToClipboard()
+        notifyCopyToClipboard(isMobile ?? false)
     }
 
     notifyUpdate(toastId, 'success', data.content);

@@ -1,4 +1,6 @@
 import { Id, toast, TypeOptions } from "react-toastify";
+import useMediaQuery from "../hooks/isMobile";
+
 
 export function notifyError(fieldName: string) {
     toast.error(`Please fill out the ${fieldName} field!`, {
@@ -14,9 +16,9 @@ export function notifyError(fieldName: string) {
 }
 
 
-export function notifyCopyToClipboard() {
+export function notifyCopyToClipboard(isMobileNotification : boolean) {
     toast.success(`Copied to Clipboard`, {
-        position: 'bottom-right',
+        position: `${isMobileNotification ? 'bottom-center' : 'bottom-right'}`,
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,

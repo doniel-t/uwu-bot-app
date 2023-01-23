@@ -7,10 +7,13 @@ import {
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const ChooseFormComponent: NextPage = () => {
   const [chooseResponse, setChooseResponse] = useState<StringResponse>();
   const [chooseInput, setChooseInput] = useState<string>();
+
+  const isMobile = useMediaQuery(500);
 
   const state: StringInputState = {
     input: chooseInput!,
@@ -40,8 +43,8 @@ export const ChooseFormComponent: NextPage = () => {
         <form
           onSubmit={(e: FormEvent<HTMLElement>) => {
             e.preventDefault();
-            submitStringRequest('choose', state, false, (input) =>
-              customIsInputValid(input)
+            const isInputValid = () => customIsInputValid(state.input);
+            submitStringRequest('choose', state, false, {isMobile: isMobile, customIsInputValid: isInputValid}
             );
           }}>
           <StringInputField
@@ -55,10 +58,10 @@ export const ChooseFormComponent: NextPage = () => {
       <button
         className="btn tooltip btn-primary tooltip-primary mt-4 w-5/6 self-center"
         data-tip="Bless RNG"
-        onClick={async () =>
-          submitStringRequest('choose', state, false, (input) =>
-            customIsInputValid(input)
-          )
+        onClick={async () =>{
+          const isInputValid = () => customIsInputValid(state.input);
+          submitStringRequest('choose', state, false, {isMobile: isMobile, customIsInputValid: isInputValid}
+          )}
         }>
         LESS GOO!
       </button>{' '}

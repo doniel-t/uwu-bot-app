@@ -7,10 +7,13 @@ import {
 import { submitStringRequest } from '../../../utils/api/submitStringRequest';
 import ParamDescription from '../../reusable/cmdParamField/inputDescription';
 import StringInputField from '../../reusable/cmdParamField/stringInputField';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const ChatFormComponent: NextPage = () => {
   const [cleverbotAnswer, setCleverbotAnswer] = useState<StringResponse>();
   const [cleverbotInput, setCleverbotInput] = useState<string>();
+
+  const isMobile = useMediaQuery(500);
 
   const state: StringInputState = {
     input: cleverbotInput!,
@@ -35,7 +38,7 @@ export const ChatFormComponent: NextPage = () => {
         <form
           onSubmit={(e: FormEvent<HTMLElement>) => {
             e.preventDefault();
-            submitStringRequest('chat', state, false);
+            submitStringRequest('chat', state, false, {isMobile});
           }}>
           <StringInputField
             stringInput={cleverbotInput!}

@@ -7,6 +7,7 @@ import SelectInput from '../../reusable/cmdParamField/selectInput';
 import ToggleInput from '../../reusable/cmdParamField/toggleInput';
 import { GENRES } from './Genres';
 import { submitMovieRequest } from './movieRequest';
+import useMediaQuery from '../../../utils/hooks/isMobile';
 
 export const MovieFormComponent: NextPage = () => {
   const [movieSuggestionResponse, setMovieSuggestionResponse] =
@@ -15,13 +16,15 @@ export const MovieFormComponent: NextPage = () => {
   const [minScore, setMinScore] = useState<number>(40);
   const [wantTheatreMovie, setWantTheatreMovie] = useState<boolean>(false);
 
+  const isMobile = useMediaQuery(500);
+
   return (
     <>
       <form
         className="flex w-full flex-col items-center self-center p-2"
         onSubmit={(e: FormEvent<HTMLElement>) => {
           e.preventDefault();
-          submitMovieRequest(genreInput, minScore, wantTheatreMovie);
+          submitMovieRequest(genreInput, minScore, wantTheatreMovie, isMobile);
         }}>
         <SelectInput
           title="Select the movie genre"
@@ -54,7 +57,7 @@ export const MovieFormComponent: NextPage = () => {
         className="btn tooltip btn-primary tooltip-primary w-5/6 self-center"
         data-tip="Grab some popcorn!"
         onClick={async () =>
-          submitMovieRequest(genreInput, minScore, wantTheatreMovie)
+          submitMovieRequest(genreInput, minScore, wantTheatreMovie, isMobile)
         }>
         LESS GOO!
       </button>

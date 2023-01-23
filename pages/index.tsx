@@ -17,6 +17,8 @@ const CommandContainer = dynamic(
 
 const Home: NextPage = () => {
   const isMobile = useMediaQuery(1000);
+  const isFullScreenToast = useMediaQuery(500);
+
   return (
     <>
       <Head>
@@ -32,7 +34,7 @@ const Home: NextPage = () => {
         <Hero />
         {!isMobile ? <Navbar /> : null}
         <CommandContainer />
-        <ToastContainer />
+        <ToastContainer className={`${isFullScreenToast ? "min-w-[100%] justify-center align-center" : ""}`}/>
       </div>
     </>
   );

@@ -24,5 +24,5 @@ Dashboard esq frontend for uwubots(and more) commands built only for the memes
 - [ ] Add more Text Based Commands(random subreddit post, movie suggestions, food recipe suggestion?)
 - [ ] Add image based commands (Meme Editor, background Remover)
 - [ ] Add utils (pdfUtils, video to audio converter, etc..)
-- [ ] PWA
+- [x] PWA
 - [ ] Dockerize

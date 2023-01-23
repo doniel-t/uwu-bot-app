@@ -1,11 +1,12 @@
 import React from 'react';
 import Wave from 'react-wavify';
+import useMediaQuery from '../utils/hooks/isMobile';
 
 export default function Hero() {
   return (
     <>
-      <div className="flex w-full flex-col">
-        <div id="home" className="hero mt-16 min-h-[85vh] ">
+      <div className="flex w-full flex-col min-w-[500px]">
+        <div id="home" className={`hero mt-16 min-h-[85vh]`}>
           <div className="hero-content flex-col lg:flex-col">
             <img
               src="./gigachad.jpg"
@@ -26,7 +27,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="mb-32">
+<div className="mb-32" >
           <Wave
             fill="#FF7AC6"
             className="z-0"
@@ -46,9 +47,11 @@ export default function Hero() {
               speed: 0.15,
               points: 4,
             }}
+        
           />
-        </div>
+          </div>
       </div>
     </>
   );
 }
+

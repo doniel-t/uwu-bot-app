@@ -12,11 +12,11 @@ export default function handler(
     const upperBound = Number(req.query.upper);
     console.log(lowerBound)
     console.log(upperBound)
-    if (!lowerBound) {
+    if (!lowerBound && lowerBound != 0) { 
         res.status(400).json({ error: "invalid lowerBound parameter!" });
         return;
     }
-    if (!upperBound) {
+    if (!upperBound && upperBound != 0) {
         res.status(400).json({ error: "invalid upperBound parameter!" });
         return;
     }

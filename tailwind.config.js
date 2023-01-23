@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      breakPoint: '1440px',
+      breakPoint: '1515px',
       xxl: '2000px',
       ...defaultTheme.screens,
     },

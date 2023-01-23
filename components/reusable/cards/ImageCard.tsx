@@ -26,7 +26,8 @@ const ImageCard: React.FC<CardParams> = ({
         bg-[#1d1e2b]
         object-fill
         shadow-xl
-        sm:w-full sm:min-w-[400px] sm:max-w-[400px] lg:min-w-[400px] lg:max-w-[65%]`}>
+        min-w-[80%]
+        sm:min-w-[400px] md:min-w-[80%] lg:min-w-[80%] lg:max-w-[65%]`}>
         <figure className="h-full w-full">
           <video
             src={`${bgUrl}`}

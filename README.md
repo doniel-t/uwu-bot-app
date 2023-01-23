@@ -14,6 +14,7 @@ Dashboard esq frontend for uwubots(and more) commands built only for the memes
 ## [Live Demo](https://uwu-bot-app.vercel.app/)
 <br>
 <br>
+
 # Self hosting guide
 
 ## requirements:
